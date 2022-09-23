@@ -1,0 +1,16 @@
+
+
+.fondoInicio{
+    position: absolute;
+    width: 192.7vh;
+    height: 88vh;
+}
+
+.fotoPerfil{
+    position: relative;
+    right: -687px;
+    width: 780px;
+    height: 551px;
+    top: 78px;
+   
+}
