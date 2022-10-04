@@ -6,7 +6,7 @@
 
 
 body{
-    background-image: url("https://images.unsplash.com/photo-1602661287394-ccf02e1a0893?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHV4fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    background-image: 
     background-repeat: no-repeat;  
     background-size: cover;
 }
@@ -20,16 +20,29 @@ li{
 
 
 .fondoInicio{
-    position: absolute;
-    width: 192.7vh;
-    height: 88vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(img/Rectangle\ 1.png);
+    background-repeat: no-repeat;
+    height: 699px;
 }
 
-.fotoPerfil{
-    position: relative;
-    right: -687px;
-    width: 780px;
-    height: 551px;
-    top: 78px;
+
+.fotoInicio img{
+overflow: hidden;
+max-width: 506px;
+
+}
+
+.textoInicio{
+max-width: 500px;
+
+color: #FFFFFF;
    
+-webkit-text-stroke-color: rgb(0, 0, 0);
+-webkit-text-stroke-width: 1px;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
