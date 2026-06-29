@@ -8,6 +8,7 @@
       body {
         margin: 0;
         min-height: 100vh;
+        min-height: 100svh;
         display: grid;
         place-items: center;
         background: #080808;
@@ -25,17 +26,49 @@
     <div class="loading">Cargando portafolio...</div>
     <script>
       (async () => {
+        const version = "mobile-fix-4";
+        const withVersion = (path) => `${path}${path.includes("?") ? "&" : "?"}v=${version}`;
+
         try {
-          const response = await fetch('./treecatdesign/index.html?v=mobile-fix-3', { cache: 'no-store' });
+          const response = await fetch(withVersion("./treecatdesign/index.html"), { cache: "no-store" });
+
+          if (!response.ok) {
+            throw new Error(`No se pudo cargar el portafolio: ${response.status}`);
+          }
+
           let html = await response.text();
-          html = html.replace('<head>', '<head>\n  <base href="./treecatdesign/">');
-          html = html.replace('</head>', '  <link rel="stylesheet" href="./css/responsive-fixes.css?v=mobile-fix-3" />\n</head>');
-          html = html.replace('content="width=device-width, initial-scale=1.0"', 'content="width=device-width, initial-scale=1, viewport-fit=cover"');
+
+          if (!/<base\s/i.test(html)) {
+            html = html.replace(/<head>/i, '<head>\n  <base href="./treecatdesign/">');
+          }
+
+          html = html.replace(
+            /<meta\s+name=["']viewport["'][^>]*>/i,
+            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
+          );
+
+          html = html.replace(
+            /<link\s+rel=["']stylesheet["']\s+href=["']\.\/css\/styles\.css["']\s*\/?>/i,
+            `<link rel="stylesheet" href="${withVersion("./css/styles.css")}" />`
+          );
+
+          if (!/responsive-fixes\.css/i.test(html)) {
+            html = html.replace(
+              /<\/head>/i,
+              `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n</head>`
+            );
+          }
+
+          html = html.replace(
+            /<script\s+src=["']\.\/js\/main\.js["']\s+defer><\/script>/i,
+            `<script src="${withVersion("./js/main.js")}" defer><\/script>`
+          );
+
           document.open();
           document.write(html);
           document.close();
         } catch (error) {
-          window.location.replace('./treecatdesign/');
+          window.location.replace("./treecatdesign/");
         }
       })();
     </script>
