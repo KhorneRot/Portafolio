@@ -26,8 +26,45 @@
     <div class="loading">Cargando portafolio...</div>
     <script>
       (async () => {
-        const version = "mobile-fix-5";
+        const version = "mobile-fix-6";
         const withVersion = (path) => `${path}${path.includes("?") ? "&" : "?"}v=${version}`;
+        const mobileHardFixes = `
+          <style id="mobile-hard-fixes">
+            @media (max-width: 900px) {
+              html, body, .page { width:100%; max-width:100%; overflow-x:hidden !important; -webkit-text-size-adjust:100%; }
+              *, *::before, *::after { max-width:100%; box-sizing:border-box; }
+              .section { width:100%; padding-inline:16px !important; overflow-x:hidden !important; }
+              .container, .project--finance .container, .finance-project-detail, .finance-project-detail-inner, .finance-case-content, .finance-smart-panel, .finance-results, .finance-case-close { width:100% !important; max-width:calc(100vw - 24px) !important; min-width:0 !important; margin-inline:auto !important; overflow-x:hidden !important; }
+              .hero-grid, .split, .finance-showcase, .finance-case-layout, .finance-story-card, .finance-story-card--compact, .finance-story-points, .finance-feature-list, .finance-research-methods, .finance-insight-grid, .finance-wireframe-grid, .finance-evolution-grid, .finance-feedback-grid, .finance-outcome-strip, .finance-learning-grid, .finance-smart-lab, .finance-smart-showcase, .finance-smart-current, .finance-smart-metrics, .finance-functions-blocks, .project-meta { display:grid !important; grid-template-columns:minmax(0,1fr) !important; grid-auto-columns:unset !important; gap:16px !important; width:100% !important; max-width:100% !important; margin-inline:0 !important; overflow:visible !important; transform:none !important; }
+              .finance-case-rail { display:none !important; }
+              .finance-case-chapter, .finance-smart-lab, .finance-case-close.finance-results, .finance-story-card--compact, .finance-feedback-card, .finance-outcome-card, .finance-learning-card, .finance-wireframe-card, .finance-evolution-card, .finance-function-card { width:100% !important; max-width:100% !important; min-width:0 !important; padding:18px !important; border-radius:24px !important; overflow:hidden !important; }
+              .finance-case-head h3, .finance-smart-intro h3, .finance-results.finance-case-close h3, .finance-story-card--compact h3 { max-width:100% !important; font-size:clamp(1.85rem,10vw,3rem) !important; line-height:1 !important; letter-spacing:-.07em !important; }
+              .finance-case-head p, .finance-smart-intro p, .finance-story-copy p, .finance-wireframe-card p, .finance-evolution-card p, .finance-feedback-card p, .finance-outcome-card p, .finance-learning-card p, .project-desc, .lead { font-size:.96rem !important; line-height:1.6 !important; }
+              .finance-wireframe-thumb, .finance-evolution-thumb, .finance-detail-media, .finance-screen-frame, .mockup { display:grid !important; place-items:center !important; width:100% !important; height:clamp(230px,52svh,380px) !important; padding:12px !important; overflow:hidden !important; }
+              .finance-wireframe-thumb img, .finance-evolution-thumb img, .finance-detail-media img, .finance-screen-frame img, .mockup img { width:100% !important; height:100% !important; max-height:100% !important; object-fit:contain !important; object-position:center top !important; transform:none !important; }
+              .finance-mascot-stage { order:-1 !important; min-height:clamp(330px,68svh,420px) !important; overflow:visible !important; }
+              .finance-mascot-peek { right:50% !important; top:auto !important; bottom:0 !important; width:min(78vw,310px) !important; translate:50% 0 !important; transform:translate3d(0,0,0) scale(.96) rotate(1deg) !important; }
+              .hero-actions, .finance-cta-actions, .finance-smart-controls { display:grid !important; grid-template-columns:1fr !important; gap:10px !important; }
+              .btn, .finance-cta-actions .btn, .finance-smart-control, .finance-project-close-btn { width:100% !important; min-width:0 !important; }
+              .finance-project-close-scene { width:100% !important; min-height:0 !important; margin:30px 0 0 !important; padding:0 0 max(18px, env(safe-area-inset-bottom)) !important; border-radius:26px 26px 0 0 !important; overflow:hidden !important; background:#dff7ff !important; box-shadow:none !important; }
+              .finance-project-close-picture { position:relative !important; inset:auto !important; width:100% !important; height:auto !important; min-height:0 !important; }
+              .finance-project-close-picture img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; object-position:center bottom !important; }
+              .finance-project-close-actions { position:relative !important; inset:auto !important; margin:-78px auto 0 !important; padding:0 16px !important; z-index:2 !important; }
+              .finance-image-modal__content { width:min(92vw,430px) !important; max-height:calc(100svh - 24px) !important; padding:54px 12px 14px !important; }
+              .finance-image-modal__frame, .finance-image-modal__frame.is-phone-frame { width:min(78vw,330px) !important; height:min(72svh,640px) !important; }
+            }
+            @media (max-width: 700px) {
+              .nav { display:none !important; }
+              .hero { padding-top:42px !important; }
+              .section { padding-top:72px !important; padding-bottom:72px !important; }
+              .finance-case-chapter, .finance-smart-lab, .finance-case-close.finance-results, .finance-story-card--compact { margin-top:24px !important; }
+            }
+            @media (max-width: 390px) {
+              .finance-mascot-stage { min-height:315px !important; }
+              .finance-wireframe-thumb, .finance-evolution-thumb, .finance-detail-media, .finance-screen-frame, .mockup { height:clamp(210px,48svh,330px) !important; }
+            }
+          </style>
+        `;
 
         try {
           const response = await fetch(withVersion("./treecatdesign/index.html"), { cache: "no-store" });
@@ -54,7 +91,7 @@
 
           html = html.replace(
             /<\/head>/i,
-            `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n</head>`
+            `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n${mobileHardFixes}\n</head>`
           );
 
           html = html.replace(
