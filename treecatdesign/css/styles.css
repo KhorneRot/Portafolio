@@ -5000,3 +5000,310 @@ body.finance-modal-open {
     min-height: 220px;
   }
 }
+
+/* Segunda pasada: case study compacto y editorial */
+.btn-disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: .62;
+  transform: none;
+}
+
+.btn-disabled:hover,
+.btn:disabled:hover {
+  transform: none;
+}
+
+.finance-story-card--compact {
+  align-items: stretch;
+  gap: clamp(20px, 4vw, 44px);
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.finance-story-card--compact .finance-story-copy {
+  align-self: center;
+}
+
+.finance-problem-compact {
+  position: relative;
+  overflow: hidden;
+  margin: 18px 0;
+  padding: clamp(18px, 3vw, 24px);
+  border: 1px solid rgba(14, 165, 233, .18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(14, 165, 233, .16), transparent 34%),
+    linear-gradient(135deg, rgba(224, 242, 254, .86), rgba(255, 255, 255, .78));
+}
+
+.finance-problem-compact span,
+.finance-problem-compact strong {
+  position: relative;
+  z-index: 1;
+}
+
+.finance-problem-compact span {
+  display: block;
+  color: var(--finance-accent-deep);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.finance-problem-compact p {
+  margin: 10px 0;
+  color: var(--finance-muted);
+  line-height: 1.55;
+}
+
+.finance-problem-compact strong {
+  display: block;
+  color: var(--finance-text);
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+.finance-case-chapter {
+  margin-top: clamp(32px, 5vw, 64px);
+  padding: clamp(20px, 3vw, 34px);
+  border-radius: 30px;
+}
+
+.finance-case-chapter::before {
+  inset: 14px;
+  border-radius: 24px;
+}
+
+.finance-case-layout {
+  grid-template-columns: 58px minmax(0, 1fr);
+}
+
+.finance-case-rail span {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+}
+
+.finance-case-head h3,
+.finance-results.finance-case-close h3 {
+  max-width: 12ch;
+  font-size: clamp(1.85rem, 4vw, 3.9rem);
+}
+
+.finance-case-head p {
+  max-width: 760px;
+  margin-top: 14px;
+  font-size: .98rem;
+  line-height: 1.65;
+}
+
+.finance-method-card,
+.finance-insight-card,
+.finance-wireframe-card,
+.finance-feedback-card,
+.finance-outcome-card,
+.finance-learning-card {
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.finance-method-card:hover,
+.finance-insight-card:hover,
+.finance-wireframe-card:hover,
+.finance-feedback-card:hover,
+.finance-outcome-card:hover,
+.finance-learning-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(14, 165, 233, .32);
+  box-shadow: 0 22px 54px rgba(14, 165, 233, .13);
+}
+
+.finance-wireframe-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.finance-wireframe-card {
+  padding: 14px;
+}
+
+.finance-wireframe-sketch {
+  min-height: 150px;
+  gap: 8px;
+  padding: 14px;
+}
+
+.finance-wireframe-card h4,
+.finance-feedback-card h4 {
+  margin-top: 12px;
+}
+
+.finance-feedback-grid {
+  position: relative;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.finance-feedback-grid::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(to right, rgba(14, 165, 233, .12), rgba(14, 165, 233, .42), rgba(14, 165, 233, .12));
+}
+
+.finance-feedback-card {
+  z-index: 1;
+  padding: 16px;
+}
+
+.finance-feedback-card dl {
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.finance-feedback-card dl div {
+  padding-top: 8px;
+}
+
+.finance-feedback-card dd {
+  font-size: .84rem;
+  line-height: 1.42;
+}
+
+.finance-smart-lab {
+  margin-top: clamp(34px, 5vw, 68px);
+  padding: clamp(20px, 4vw, 38px);
+  border-radius: 30px;
+}
+
+.finance-solution-number {
+  position: absolute;
+  top: clamp(18px, 3vw, 30px);
+  right: clamp(18px, 3vw, 30px);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(14, 165, 233, .22);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .78);
+  color: var(--finance-accent-deep);
+  font-size: .9rem;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(14, 165, 233, .11);
+}
+
+.finance-smart-intro h3 {
+  max-width: 12ch;
+}
+
+.finance-smart-intro p {
+  max-width: 38rem;
+}
+
+.finance-smart-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.finance-smart-control {
+  min-height: auto;
+  padding: 13px;
+}
+
+.finance-smart-control-copy {
+  font-size: .78rem;
+}
+
+.finance-results.finance-case-close {
+  margin-top: clamp(34px, 5vw, 68px);
+}
+
+.finance-outcome-card strong {
+  font-size: clamp(1.35rem, 2.4vw, 2.35rem);
+}
+
+.finance-project-close-scene {
+  min-height: clamp(460px, 58vw, 720px);
+  margin-top: clamp(34px, 6vw, 70px);
+}
+
+@media (max-width: 900px) {
+  .finance-case-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-wireframe-grid,
+  .finance-feedback-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .finance-feedback-grid::before {
+    display: none;
+  }
+
+  .finance-smart-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .finance-story-card--compact,
+  .finance-case-chapter,
+  .finance-smart-lab,
+  .finance-case-close.finance-results {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .finance-case-head h3,
+  .finance-results.finance-case-close h3,
+  .finance-smart-intro h3 {
+    max-width: 13ch;
+    font-size: clamp(1.8rem, 10vw, 2.75rem);
+  }
+
+  .finance-research-methods,
+  .finance-insight-grid,
+  .finance-wireframe-grid,
+  .finance-feedback-grid,
+  .finance-outcome-strip,
+  .finance-learning-grid {
+    gap: 10px;
+  }
+
+  .finance-wireframe-grid,
+  .finance-feedback-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-wireframe-sketch {
+    min-height: 132px;
+  }
+
+  .finance-feedback-card dl {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-project-close-scene {
+    min-height: 82svh;
+    margin-top: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finance-method-card,
+  .finance-insight-card,
+  .finance-wireframe-card,
+  .finance-feedback-card,
+  .finance-outcome-card,
+  .finance-learning-card {
+    transition: none;
+  }
+}

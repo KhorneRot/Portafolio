@@ -138,7 +138,7 @@
 
               <div class="finance-cta-actions reveal" style="--delay: 280ms;">
                 <button class="btn finance-btn-primary finance-project-toggle" type="button" data-finance-toggle aria-expanded="false" aria-controls="hormigon-completo">Ver proyecto completo</button>
-                <a class="btn finance-btn-secondary" href="#" aria-label="Ver prototipo de Hormigon en Figma">Ver Figma</a>
+                <button class="btn finance-btn-secondary btn-disabled" type="button" disabled>Figma próximamente</button>
                 <a class="btn finance-btn-secondary" href="#contacto">Contacto</a>
               </div>
             </div>
@@ -166,10 +166,10 @@
 
           <div class="finance-project-detail" id="hormigon-completo" aria-hidden="true">
             <div class="finance-project-detail-inner">
-            <div class="finance-story-card reveal" id="hormigon-historia">
+            <div class="finance-story-card finance-story-card--compact reveal" id="hormigon-historia">
               <div>
-                <p class="section-kicker">Historia del proyecto</p>
-                <h3>Una solución nacida de una necesidad real.</h3>
+                <p class="section-kicker">Contexto breve</p>
+                <h3>Una app para registrar, entender y anticipar el dinero del mes.</h3>
                 <figure class="finance-story-mascot" aria-label="Mascota tomando una moneda para representar el origen de la app">
                   <img
                     src="./assets/mascota-necesidad-real.webp"
@@ -184,16 +184,22 @@
 
               <div class="finance-story-copy">
                 <p>
-                  Detecté que muchas personas no tienen claridad sobre cuánto gastan realmente y, por eso, suelen gastar más de lo que ganan. En mi caso, mi esposa y yo llevábamos nuestras finanzas en Excel para registrar compras, ingresos extra, deudas familiares y pagos a meses; el problema era que mantenerlo actualizado se volvía tedioso.
+                  Hormigon nace de una necesidad real: controlar finanzas personales desde Excel funcionaba, pero actualizar gastos, ingresos extra, deudas familiares y compras a meses se volvió tedioso.
                 </p>
                 <p>
-                  Hormigon nace para eliminar esa fricción: una app que permite capturar información en el momento, consultar cómo va el mes y proyectar meses futuros sin tener que sentarse frente a una computadora. La intención es que el control financiero sea útil, simple y hasta divertido.
+                  La app está pensada para personas que ya intentan organizarse, pero necesitan registrar movimientos desde el celular, revisar cómo va el mes y anticipar pagos sin depender de una computadora.
                 </p>
 
+                <div class="finance-problem-compact reveal" style="--delay: 120ms;">
+                  <span>Problema + oportunidad</span>
+                  <p>Las herramientas manuales ayudan a organizarse, pero fallan cuando registrar dinero exige demasiado esfuerzo justo en momentos cotidianos.</p>
+                  <strong>¿Cómo podríamos hacer que revisar y registrar finanzas sea tan inmediato como consultar el celular?</strong>
+                </div>
+
                 <div class="finance-story-points" aria-label="Objetivos principales del producto">
-                  <div class="finance-story-point">Registrar sin fricción</div>
-                  <div class="finance-story-point">Entender hábitos</div>
-                  <div class="finance-story-point">Ahorrar con intención</div>
+                  <div class="finance-story-point">Registrar rápido</div>
+                  <div class="finance-story-point">Entender patrones</div>
+                  <div class="finance-story-point">Anticipar pagos</div>
                 </div>
               </div>
             </div>
@@ -207,10 +213,10 @@
 
                 <div class="finance-case-content">
                   <div class="finance-case-head">
-                    <p class="section-kicker">Investigación</p>
-                    <h3 id="finance-research-title">Entender por qué el control financiero se abandona.</h3>
+                    <p class="section-kicker">Investigación ligera</p>
+                    <h3 id="finance-research-title">Qué observé antes de diseñar.</h3>
                     <p>
-                      El proyecto empezó con un problema real dentro de mi hogar: usábamos Excel para registrar compras, ingresos extra, deudas familiares y pagos a meses, pero actualizarlo desde una computadora hacía que el hábito se volviera pesado. Antes de diseñar pantallas, convertí esa experiencia en preguntas de investigación para validar si la fricción era personal o un patrón común.
+                      Validé el problema con uso real en casa, conversaciones informales y síntesis de patrones. El objetivo era separar una molestia personal de una fricción repetible.
                     </p>
                   </div>
 
@@ -236,8 +242,8 @@
 
                   <div class="finance-insight-board" aria-label="Hallazgos principales de investigación">
                     <div class="finance-insight-board-head">
-                      <span>Hallazgos que guiaron el producto</span>
-                      <p>No era un problema de “no querer organizarse”; era un problema de esfuerzo, momento y claridad.</p>
+                      <span>Insights clave</span>
+                      <p>El problema no era falta de intención: era esfuerzo, momento y claridad.</p>
                     </div>
 
                     <div class="finance-insight-grid">
@@ -264,130 +270,10 @@
               </div>
             </section>
 
-            <section class="finance-case-chapter finance-case-definition reveal" aria-labelledby="finance-definition-title">
-              <div class="finance-case-layout">
-                <aside class="finance-case-rail" aria-hidden="true">
-                  <span>02</span>
-                  <i></i>
-                </aside>
-
-                <div class="finance-case-content">
-                  <div class="finance-case-head">
-                    <p class="section-kicker">Definición</p>
-                    <h3 id="finance-definition-title">Diseñar para personas que ya intentan controlarse, pero se cansan del proceso.</h3>
-                    <p>
-                      La oportunidad no estaba en explicar finanzas desde cero, sino en reducir la carga operativa de quien ya tiene la intención de organizarse. Definí el caso alrededor de usuarios con compras a meses, deudas compartidas, ingresos no siempre constantes y poco tiempo para actualizar registros manuales.
-                    </p>
-                  </div>
-
-                  <div class="finance-problem-statement reveal" style="--delay: 100ms;">
-                    <span>Problema definido</span>
-                    <p>
-                      Las personas que controlan su dinero manualmente necesitan registrar movimientos y revisar su avance mensual desde el celular, porque depender de herramientas de escritorio provoca registros incompletos, poca visibilidad y decisiones tardías.
-                    </p>
-                  </div>
-
-                  <div class="finance-definition-grid" aria-label="Marco de definición del usuario y criterios de diseño">
-                    <article class="finance-definition-card reveal" style="--delay: 90ms;">
-                      <span class="finance-definition-label">Usuario principal</span>
-                      <h4>Organizador financiero cotidiano</h4>
-                      <p>Persona que administra gastos personales o familiares, usa métodos manuales y necesita claridad rápida para no gastar más de lo disponible.</p>
-                    </article>
-
-                    <article class="finance-definition-card reveal" style="--delay: 170ms;">
-                      <span class="finance-definition-label">Necesidad central</span>
-                      <h4>Registrar ahora, decidir mejor después.</h4>
-                      <p>Capturar movimientos sin fricción y convertir esos datos en señales simples: disponible, comprometido, excedido o posible ahorro.</p>
-                    </article>
-
-                    <article class="finance-definition-card reveal" style="--delay: 250ms;">
-                      <span class="finance-definition-label">Criterio UX</span>
-                      <h4>Menos carga cognitiva en el inicio.</h4>
-                      <p>Priorizar acciones frecuentes y mover el análisis profundo a secciones específicas para evitar que la pantalla principal se sienta saturada.</p>
-                    </article>
-                  </div>
-
-                  <div class="finance-how-might-we reveal" style="--delay: 260ms;">
-                    <span>Pregunta de diseño</span>
-                    <strong>¿Cómo podríamos hacer que registrar y revisar el dinero sea tan inmediato como consultar el celular, sin perder profundidad para analizar hábitos?</strong>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="finance-case-chapter finance-process-evidence reveal" aria-labelledby="finance-evidence-title">
-              <div class="finance-case-layout">
-                <aside class="finance-case-rail" aria-hidden="true">
-                  <span>03</span>
-                  <i></i>
-                </aside>
-
-                <div class="finance-case-content">
-                  <div class="finance-case-head">
-                    <p class="section-kicker">Evidencia del proceso</p>
-                    <h3 id="finance-evidence-title">Del Excel original a un prototipo preparado para validar.</h3>
-                    <p>
-                      Esta sección está preparada para documentar el camino real del proyecto. Los espacios funcionan como placeholders elegantes para reemplazar después por capturas del Excel, notas, wireframes, mapa de hallazgos y prototipo en Figma.
-                    </p>
-                  </div>
-
-                  <div class="finance-evidence-grid" aria-label="Placeholders de evidencia del proceso de Hormigon">
-                    <article class="finance-evidence-card reveal" style="--delay: 70ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-excel.webp">
-                        <span>Excel original</span>
-                      </div>
-                      <h4>Punto de partida</h4>
-                      <p>Registro manual usado para controlar ingresos, gastos, deudas y compras a meses antes de llevarlo a móvil.</p>
-                    </article>
-
-                    <article class="finance-evidence-card reveal" style="--delay: 120ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-notas.webp">
-                        <span>Notas de investigación</span>
-                      </div>
-                      <h4>Descubrimiento ligero</h4>
-                      <p>Conversaciones y observación de fricciones: registro tardío, dudas sobre disponible y pagos futuros.</p>
-                    </article>
-
-                    <article class="finance-evidence-card reveal" style="--delay: 170ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-wireframe-home.webp">
-                        <span>Wireframe home</span>
-                      </div>
-                      <h4>Primeras estructuras</h4>
-                      <p>Exploración de jerarquía para balance, historial, acciones rápidas y lectura del mes.</p>
-                    </article>
-
-                    <article class="finance-evidence-card reveal" style="--delay: 220ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-wireframe-registro.webp">
-                        <span>Wireframe registro</span>
-                      </div>
-                      <h4>Flujos de captura</h4>
-                      <p>Pruebas de estructura para registrar gasto, ingreso o movimiento sin depender de escritorio.</p>
-                    </article>
-
-                    <article class="finance-evidence-card reveal" style="--delay: 270ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-affinity-map.webp">
-                        <span>Mapa de hallazgos</span>
-                      </div>
-                      <h4>Síntesis</h4>
-                      <p>Agrupación de necesidades alrededor de claridad, flexibilidad, control y motivación.</p>
-                    </article>
-
-                    <article class="finance-evidence-card reveal" style="--delay: 320ms;">
-                      <div class="finance-evidence-placeholder" data-file="assets/hormigon/proceso-prototipo-figma.webp">
-                        <span>Prototipo Figma</span>
-                      </div>
-                      <h4>Prototipo navegable</h4>
-                      <p>Espacio preparado para documentar el prototipo y las pantallas finales conectadas.</p>
-                    </article>
-                  </div>
-                </div>
-              </div>
-            </section>
-
             <section class="finance-case-chapter finance-case-exploration reveal" aria-labelledby="finance-exploration-title">
               <div class="finance-case-layout">
                 <aside class="finance-case-rail" aria-hidden="true">
-                  <span>04</span>
+                  <span>02</span>
                   <i></i>
                 </aside>
 
@@ -440,7 +326,7 @@
             <section class="finance-case-chapter finance-case-feedback reveal" aria-labelledby="finance-feedback-title">
               <div class="finance-case-layout">
                 <aside class="finance-case-rail" aria-hidden="true">
-                  <span>05</span>
+                  <span>03</span>
                   <i></i>
                 </aside>
 
@@ -502,247 +388,36 @@
               </div>
             </section>
 
-            <section class="finance-case-chapter finance-product-decisions reveal" aria-labelledby="finance-design-decisions-title">
-              <div class="finance-case-layout">
-                <aside class="finance-case-rail" aria-hidden="true">
-                  <span>06</span>
-                  <i></i>
-                </aside>
-
-                <div class="finance-case-content">
-                  <div class="finance-case-head">
-                    <p class="section-kicker">Decisiones del producto</p>
-                    <h3 id="finance-design-decisions-title">Cada módulo responde a una fricción detectada.</h3>
-                    <p>
-                      Organicé las decisiones en una lógica simple para que el producto no fuera una lista de funciones, sino un sistema de apoyo: capturar rápido, entender el mes, anticipar riesgos y motivar el ahorro.
-                    </p>
-                  </div>
-
-                  <div class="finance-product-decision-grid" aria-label="Decisiones clave de producto de Hormigon">
-                    <article class="finance-product-decision-card reveal" style="--delay: 80ms;">
-                      <span class="finance-product-number">01</span>
-                      <h4>Inicio enfocado en lo frecuente</h4>
-                      <dl>
-                        <div>
-                          <dt>Hallazgo</dt>
-                          <dd>La pantalla principal se sentía pesada cuando mostraba todo el análisis.</dd>
-                        </div>
-                        <div>
-                          <dt>Decisión</dt>
-                          <dd>Dejar en inicio el historial y las acciones rápidas de registro.</dd>
-                        </div>
-                        <div>
-                          <dt>Resultado esperado</dt>
-                          <dd>Abrir la app sin saturación y completar tareas rápidas con menos esfuerzo.</dd>
-                        </div>
-                      </dl>
-                    </article>
-
-                    <article class="finance-product-decision-card reveal" style="--delay: 150ms;">
-                      <span class="finance-product-number">02</span>
-                      <h4>Estadísticas como segunda capa</h4>
-                      <dl>
-                        <div>
-                          <dt>Hallazgo</dt>
-                          <dd>El usuario necesita profundidad, pero no en el primer vistazo.</dd>
-                        </div>
-                        <div>
-                          <dt>Decisión</dt>
-                          <dd>Mover mapa de calor, top de gastos y comparativos a una sección de análisis.</dd>
-                        </div>
-                        <div>
-                          <dt>Resultado esperado</dt>
-                          <dd>Separar acción inmediata de lectura estratégica del comportamiento financiero.</dd>
-                        </div>
-                      </dl>
-                    </article>
-
-                    <article class="finance-product-decision-card reveal" style="--delay: 220ms;">
-                      <span class="finance-product-number">03</span>
-                      <h4>Ingresos variables desde el flujo base</h4>
-                      <dl>
-                        <div>
-                          <dt>Hallazgo</dt>
-                          <dd>No todos reciben dinero en fechas o montos constantes.</dd>
-                        </div>
-                        <div>
-                          <dt>Decisión</dt>
-                          <dd>Permitir captura manual de ingresos cuando ocurren, sin calendario obligatorio.</dd>
-                        </div>
-                        <div>
-                          <dt>Resultado esperado</dt>
-                          <dd>Ampliar el alcance del producto a usuarios con honorarios, freelance o ingresos extra.</dd>
-                        </div>
-                      </dl>
-                    </article>
-
-                    <article class="finance-product-decision-card reveal" style="--delay: 290ms;">
-                      <span class="finance-product-number">04</span>
-                      <h4>Metas y presupuestos como motivadores</h4>
-                      <dl>
-                        <div>
-                          <dt>Hallazgo</dt>
-                          <dd>Registrar gastos no basta si el usuario no ve progreso o límites claros.</dd>
-                        </div>
-                        <div>
-                          <dt>Decisión</dt>
-                          <dd>Convertir ahorro y límites mensuales en estados visibles y fáciles de revisar.</dd>
-                        </div>
-                        <div>
-                          <dt>Resultado esperado</dt>
-                          <dd>Pasar de “anotar gastos” a tomar decisiones preventivas durante el mes.</dd>
-                        </div>
-                      </dl>
-                    </article>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <div class="finance-detail-head reveal">
-              <p class="section-kicker">Diseño final</p>
-              <h3>Funciones que aterrizan la solución sin repetir el proceso.</h3>
-              <p>
-                El diseño final concentra las funciones que mejor conectan con los hallazgos: registrar sin fricción, entender hábitos, anticipar pagos y mantener visibles las metas de ahorro.
-              </p>
-            </div>
-
-            <div class="finance-detail-grid">
-              <article class="finance-detail-card reveal">
-                <figure class="finance-detail-media">
-                  <img
-                    src="./assets/mascota-ahorrando.webp"
-                    alt="Mascota colocando una moneda en una alcancía"
-                    width="820"
-                    height="795"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption class="finance-image-caption">El poder de ahorrar</figcaption>
-                </figure>
-                <div class="finance-detail-content">
-                  <span class="finance-detail-label">Ahorro</span>
-                  <h3>Define metas y descubre si tienes dinero disponible.</h3>
-                  <p>
-                    La app busca que el usuario pueda ahorrar para objetivos concretos revisando si tiene dinero de sobra después de considerar gastos fijos, deudas y compromisos del mes.
-                  </p>
-                </div>
-              </article>
-
-              <article class="finance-detail-card reveal" style="--delay: 90ms;">
-                <figure class="finance-detail-media">
-                  <img
-                    src="./assets/mascota-investigando.webp"
-                    alt="Mascota detective investigando con una lupa"
-                    width="702"
-                    height="820"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption class="finance-image-caption">Detectar patrones</figcaption>
-                </figure>
-                <div class="finance-detail-content">
-                  <span class="finance-detail-label">Categorías</span>
-                  <h3>Entiende en qué se va el dinero.</h3>
-                  <p>
-                    Las etiquetas clasifican los gastos por categoría y permiten generar estadísticas para identificar hábitos, detectar excesos y tomar decisiones más conscientes.
-                  </p>
-                </div>
-              </article>
-
-              <article class="finance-detail-card finance-detail-card--wide reveal">
-                <figure class="finance-detail-media">
-                  <img
-                    src="./assets/mascota-meta.webp"
-                    alt="Mascota cruzando una meta"
-                    width="697"
-                    height="820"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption class="finance-image-caption">Metas que motivan</figcaption>
-                </figure>
-                <div class="finance-detail-content">
-                  <span class="finance-detail-label">Metas</span>
-                  <h3>Convierte el ahorro en progreso visible.</h3>
-                  <p>
-                    El usuario puede proponerse metas y avanzar mes con mes. La experiencia busca que ahorrar se sienta alcanzable, medible y motivador, no como una tarea pesada.
-                  </p>
-                </div>
-              </article>
-
-              <article class="finance-detail-card reveal" style="--delay: 120ms;">
-                <figure class="finance-detail-media">
-                  <img
-                    src="./assets/mascota-celular.webp"
-                    alt="Mascota mostrando la aplicación en un celular"
-                    width="720"
-                    height="900"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption class="finance-image-caption">Finanzas a la mano</figcaption>
-                </figure>
-                <div class="finance-detail-content">
-                  <span class="finance-detail-label">Movilidad</span>
-                  <h3>Consulta tus finanzas desde cualquier lugar.</h3>
-                  <p>
-                    La app está pensada para que el usuario registre gastos y revise su situación financiera sin depender de un escritorio o una hoja de cálculo abierta.
-                  </p>
-                </div>
-              </article>
-
-              <article class="finance-detail-card reveal" style="--delay: 210ms;">
-                <figure class="finance-detail-media">
-                  <img
-                    src="./assets/mascota-dinero-nueva.png"
-                    alt="Mascota con lentes rodeada de billetes, regalos y bolsas de compras"
-                    width="1672"
-                    height="941"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption class="finance-image-caption">Mejor control financiero</figcaption>
-                </figure>
-                <div class="finance-detail-content">
-                  <span class="finance-detail-label">Control</span>
-                  <h3>Gasta menos de lo que ganas.</h3>
-                  <p>
-                    El objetivo final es dar claridad para anticipar el cierre del mes, evitar excederse y construir hábitos que ayuden a usar mejor el dinero.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <section class="finance-app-value finance-smart-lab reveal" aria-label="Vista inteligente de funciones de Hormigon">
+            <section class="finance-app-value finance-smart-lab reveal" aria-label="Solución final de Hormigon">
+              <span class="finance-solution-number" aria-hidden="true">04</span>
               <div class="finance-smart-intro">
-                <p class="section-kicker">Vista inteligente de tus gastos</p>
-                <h3>Una lectura visual que transforma tus movimientos en decisiones.</h3>
+                <p class="section-kicker">Solución final</p>
+                <h3>Una app para registrar, entender y anticipar.</h3>
                 <p>
-                  La idea principal de Hormigon es que el control financiero se sienta más como una experiencia tipo videojuego que como una responsabilidad tediosa. Al convertir el registro y la lectura del dinero en un hábito ligero, visual y motivador, el usuario puede reconocer cómo se mueve su dinero y ver resultados de forma más clara.
+                  La propuesta final reduce el esfuerzo de captura y convierte los movimientos del mes en señales simples para decidir mejor.
                 </p>
 
                 <div class="finance-value-badges" aria-label="Beneficios principales">
-                  <span>Claridad mensual</span>
-                  <span>Comparativas reales</span>
-                  <span>Hábitos medibles</span>
+                  <span>Registro rápido</span>
+                  <span>Lectura clara</span>
+                  <span>Pagos anticipados</span>
                 </div>
 
                 <div class="finance-smart-metrics" aria-label="Indicadores de valor de la app">
                   <div class="finance-smart-metric">
                     <small>Módulos clave</small>
-                    <strong>05</strong>
-                    <span>vistas para decidir mejor</span>
+                    <strong>04</strong>
+                    <span>acciones y lecturas esenciales</span>
                   </div>
                   <div class="finance-smart-metric">
-                    <small>Enfoque</small>
-                    <strong>360°</strong>
-                    <span>gasto, deuda y ahorro</span>
+                    <small>Foco UX</small>
+                    <strong>Menos ruido</strong>
+                    <span>home más directo y escaneable</span>
                   </div>
                   <div class="finance-smart-metric">
-                    <small>Resultado</small>
-                    <strong>+Orden</strong>
-                    <span>menos hojas de cálculo</span>
+                    <small>Aprendizaje</small>
+                    <strong>Iterar</strong>
+                    <span>feedback convertido en estructura</span>
                   </div>
                 </div>
               </div>
@@ -757,14 +432,14 @@
                       class="finance-function-zoom finance-smart-device"
                       type="button"
                       data-smart-main-device
-                      data-full-image="./assets/finance-feature-linea-tiempo.jpeg"
-                      data-full-title="Línea de tiempo"
-                      aria-label="Ver imagen completa de Línea de tiempo"
+                      data-full-image="./assets/finance-login-hero.png"
+                      data-full-title="Registro rápido"
+                      aria-label="Ver imagen completa de Registro rápido"
                     >
                       <span class="finance-phone-speaker" aria-hidden="true"></span>
                       <img
-                        src="./assets/finance-feature-linea-tiempo.jpeg"
-                        alt="Captura de la función Línea de tiempo de pagos"
+                        src="./assets/finance-login-hero.png"
+                        alt="Mockup de acceso y registro rápido de Hormigon"
                         width="784"
                         height="1600"
                         loading="lazy"
@@ -788,9 +463,9 @@
                   </div>
                 </div>
 
-                <div class="finance-smart-panel">
-                  <div class="finance-smart-panel-head">
-                    <span>Explora los módulos</span>
+                  <div class="finance-smart-panel">
+                    <div class="finance-smart-panel-head">
+                    <span>Módulos clave</span>
                   </div>
 
                   <div class="finance-smart-controls" role="list" aria-label="Seleccionar función destacada">
@@ -798,75 +473,60 @@
                       class="finance-smart-control is-active"
                       type="button"
                       role="listitem"
-                      data-smart-title="Línea de tiempo"
-                      data-smart-copy="Muestra cuándo terminarás de pagar un préstamo o una compra diferida a meses, cuánto pagas actualmente y cuánto dejarás de pagar al liberarse cada compromiso."
-                      data-smart-image="./assets/finance-feature-linea-tiempo.jpeg"
-                      data-smart-alt="Captura de la función Línea de tiempo de pagos"
+                      data-smart-title="Registro rápido"
+                      data-smart-copy="Capturar movimientos desde el celular evita dejar gastos pendientes y reduce la dependencia de Excel."
+                      data-smart-image="./assets/finance-login-hero.png"
+                      data-smart-alt="Mockup de acceso y registro rápido de Hormigon"
                     >
                       <span>01</span>
-                      <strong>Línea de tiempo</strong>
-                      <small>Deudas y pagos futuros</small>
-                      <p class="finance-smart-control-copy">Muestra cuándo terminarás de pagar un préstamo o una compra diferida a meses, cuánto pagas actualmente y cuánto dejarás de pagar al liberarse cada compromiso.</p>
+                      <strong>Registrar movimientos</strong>
+                      <small>Acción frecuente</small>
+                      <p class="finance-smart-control-copy">Capturar movimientos desde el celular evita dejar gastos pendientes y reduce la dependencia de Excel.</p>
                     </button>
 
                     <button
                       class="finance-smart-control"
                       type="button"
                       role="listitem"
-                      data-smart-title="Top de gastos"
-                      data-smart-copy="Identifica las categorías con más gasto durante el mes y las compara con el mes anterior para crear conciencia sobre aumentos, reducciones y hábitos repetidos."
+                      data-smart-title="Entender gastos"
+                      data-smart-copy="Identifica categorías con mayor impacto para reconocer patrones y ajustar decisiones durante el mes."
                       data-smart-image="./assets/finance-feature-ranking-gastos.jpeg"
                       data-smart-alt="Captura del ranking de gastos por categoría"
                     >
                       <span>02</span>
-                      <strong>Top de gastos</strong>
-                      <small>Categorías con mayor impacto</small>
-                      <p class="finance-smart-control-copy">Identifica las categorías con más gasto durante el mes y las compara con el mes anterior para crear conciencia sobre aumentos, reducciones y hábitos repetidos.</p>
+                      <strong>Entender gastos</strong>
+                      <small>Patrones y categorías</small>
+                      <p class="finance-smart-control-copy">Identifica categorías con mayor impacto para reconocer patrones y ajustar decisiones durante el mes.</p>
                     </button>
 
                     <button
                       class="finance-smart-control"
                       type="button"
                       role="listitem"
-                      data-smart-title="Presupuestos"
-                      data-smart-copy="Permite configurar límites por categoría para saber cuánto llevas usado, cuánto queda disponible y cuándo conviene reducir el consumo antes de pasarte."
-                      data-smart-image="./assets/finance-feature-presupuesto.jpeg"
-                      data-smart-alt="Captura de presupuestos activos y límites mensuales"
+                      data-smart-title="Anticipar pagos"
+                      data-smart-copy="Muestra deudas, compras a meses y pagos próximos para que el usuario entienda qué dinero ya está comprometido."
+                      data-smart-image="./assets/finance-feature-linea-tiempo.jpeg"
+                      data-smart-alt="Captura de la función Línea de tiempo de pagos"
                     >
                       <span>03</span>
-                      <strong>Presupuestos</strong>
-                      <small>Límites claros por categoría</small>
-                      <p class="finance-smart-control-copy">Permite configurar límites por categoría para saber cuánto llevas usado, cuánto queda disponible y cuándo conviene reducir el consumo antes de pasarte.</p>
+                      <strong>Anticipar pagos</strong>
+                      <small>Deudas y compromisos</small>
+                      <p class="finance-smart-control-copy">Muestra deudas, compras a meses y pagos próximos para que el usuario entienda qué dinero ya está comprometido.</p>
                     </button>
 
                     <button
                       class="finance-smart-control"
                       type="button"
                       role="listitem"
-                      data-smart-title="Mapa de calor"
-                      data-smart-copy="Visualiza los días con mayor actividad de gasto, detecta el día más pesado del periodo y compara el comportamiento contra el mes pasado."
-                      data-smart-image="./assets/finance-feature-mapa-calor.jpeg"
-                      data-smart-alt="Captura del mapa de calor mensual de gastos"
-                    >
-                      <span>04</span>
-                      <strong>Mapa de calor</strong>
-                      <small>Días críticos del mes</small>
-                      <p class="finance-smart-control-copy">Visualiza los días con mayor actividad de gasto, detecta el día más pesado del periodo y compara el comportamiento contra el mes pasado.</p>
-                    </button>
-
-                    <button
-                      class="finance-smart-control"
-                      type="button"
-                      role="listitem"
-                      data-smart-title="Metas"
-                      data-smart-copy="Registra objetivos personales, permite abonar o retirar dinero y muestra el avance de forma clara para motivar el ahorro constante hasta alcanzar cada meta."
+                      data-smart-title="Metas de ahorro"
+                      data-smart-copy="Convierte el ahorro en progreso visible para que el usuario vea avances, retiros y abonos de forma simple."
                       data-smart-image="./assets/finance-feature-metas.jpeg"
                       data-smart-alt="Captura de metas de ahorro y progreso"
                     >
-                      <span>05</span>
-                      <strong>Metas</strong>
-                      <small>Ahorro con avance visible</small>
-                      <p class="finance-smart-control-copy">Registra objetivos personales, permite abonar o retirar dinero y muestra el avance de forma clara para motivar el ahorro constante hasta alcanzar cada meta.</p>
+                      <span>04</span>
+                      <strong>Seguir metas</strong>
+                      <small>Ahorro visible</small>
+                      <p class="finance-smart-control-copy">Convierte el ahorro en progreso visible para que el usuario vea avances, retiros y abonos de forma simple.</p>
                     </button>
                   </div>
                 </div>
@@ -876,7 +536,7 @@
             <section class="finance-case-chapter finance-results finance-case-close reveal" aria-labelledby="finance-results-title">
               <div class="finance-case-layout">
                 <aside class="finance-case-rail" aria-hidden="true">
-                  <span>07</span>
+                  <span>05</span>
                   <i></i>
                 </aside>
 
@@ -885,7 +545,7 @@
                     <p class="section-kicker">Resultados, aprendizajes y próximos pasos</p>
                     <h3 id="finance-results-title">Un avance honesto desde una necesidad real.</h3>
                     <p>
-                      Hormigon todavía no presume métricas grandes: el valor está en haber convertido un problema real en un flujo más claro, probado con datos cotidianos y preparado para validación externa.
+                      Hormigon todavía no presume métricas grandes: el aprendizaje principal fue convertir un problema real en un flujo más claro, probarlo con datos cotidianos y preparar el producto para validación externa.
                     </p>
                   </div>
 
@@ -911,21 +571,21 @@
 
                   <div class="finance-learning-grid" aria-label="Aprendizajes y próximos pasos del caso">
                     <article class="finance-learning-card reveal" style="--delay: 90ms;">
-                      <span>Aprendizaje principal</span>
-                      <h4>Diseñar cerca del usuario obliga a soltar supuestos.</h4>
-                      <p>El producto mejoró cuando dejó de asumir nómina fija, una sola cuenta y un home capaz de explicarlo todo.</p>
+                      <span>Próximo paso</span>
+                      <h4>Validar con usuarios externos.</h4>
+                      <p>Probar el prototipo con personas fuera del contexto familiar para detectar nuevas fricciones.</p>
                     </article>
 
                     <article class="finance-learning-card reveal" style="--delay: 170ms;">
                       <span>Próximos pasos</span>
-                      <h4>Validar con personas externas.</h4>
-                      <p>Probar el prototipo, medir tiempo de registro de gastos y validar si el home se entiende sin explicación previa.</p>
+                      <h4>Medir tiempo de registro.</h4>
+                      <p>Observar cuánto tarda una persona en registrar gasto, ingreso o deuda sin ayuda.</p>
                     </article>
 
                     <article class="finance-learning-card reveal" style="--delay: 250ms;">
                       <span>Evolución</span>
-                      <h4>Preparar una beta más sólida.</h4>
-                      <p>Mejorar accesibilidad, documentar el sistema visual y preparar una beta cerrada con tareas de prueba claras.</p>
+                      <h4>Documentar sistema visual y accesibilidad.</h4>
+                      <p>Ordenar componentes, estados, contraste e interacciones antes de una beta cerrada.</p>
                     </article>
                   </div>
                 </div>
@@ -1225,8 +885,8 @@
 
           <div class="hero-actions reveal" style="--delay: 240ms; justify-content:center;">
             <a class="btn btn-primary" href="mailto:hola@treecatdesign.com">Email</a>
-            <a class="btn btn-secondary" href="#" aria-label="Ver perfil de Alejandro Ramírez en LinkedIn">LinkedIn</a>
-            <a class="btn btn-secondary" href="#" aria-label="Ver prototipo de Hormigon en Figma">Figma</a>
+            <button class="btn btn-secondary btn-disabled" type="button" disabled>LinkedIn próximamente</button>
+            <button class="btn btn-secondary btn-disabled" type="button" disabled>Figma próximamente</button>
           </div>
         </div>
       </section>
