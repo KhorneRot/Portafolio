@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Portafolio | Alejandro Ramírez</title>
     <style>
       body {
@@ -26,10 +26,11 @@
     <script>
       (async () => {
         try {
-          const response = await fetch('./treecatdesign/index.html', { cache: 'no-store' });
+          const response = await fetch('./treecatdesign/index.html?v=mobile-fix-3', { cache: 'no-store' });
           let html = await response.text();
           html = html.replace('<head>', '<head>\n  <base href="./treecatdesign/">');
-          html = html.replace('</head>', '  <link rel="stylesheet" href="./css/responsive-fixes.css" />\n</head>');
+          html = html.replace('</head>', '  <link rel="stylesheet" href="./css/responsive-fixes.css?v=mobile-fix-3" />\n</head>');
+          html = html.replace('content="width=device-width, initial-scale=1.0"', 'content="width=device-width, initial-scale=1, viewport-fit=cover"');
           document.open();
           document.write(html);
           document.close();
