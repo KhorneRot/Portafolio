@@ -26,7 +26,7 @@
     <div class="loading">Cargando portafolio...</div>
     <script>
       (async () => {
-        const version = "mobile-fix-4";
+        const version = "mobile-fix-5";
         const withVersion = (path) => `${path}${path.includes("?") ? "&" : "?"}v=${version}`;
 
         try {
@@ -52,12 +52,10 @@
             `<link rel="stylesheet" href="${withVersion("./css/styles.css")}" />`
           );
 
-          if (!/responsive-fixes\.css/i.test(html)) {
-            html = html.replace(
-              /<\/head>/i,
-              `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n</head>`
-            );
-          }
+          html = html.replace(
+            /<\/head>/i,
+            `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n</head>`
+          );
 
           html = html.replace(
             /<script\s+src=["']\.\/js\/main\.js["']\s+defer><\/script>/i,
