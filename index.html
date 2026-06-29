@@ -1,111 +1,1060 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Portafolio | Alejandro Ramírez</title>
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        min-height: 100svh;
-        display: grid;
-        place-items: center;
-        background: #080808;
-        color: #f7f7f2;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-      .loading {
-        opacity: .78;
-        text-align: center;
-        padding: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="loading">Cargando portafolio...</div>
-    <script>
-      (async () => {
-        const version = "mobile-fix-6";
-        const withVersion = (path) => `${path}${path.includes("?") ? "&" : "?"}v=${version}`;
-        const mobileHardFixes = `
-          <style id="mobile-hard-fixes">
-            @media (max-width: 900px) {
-              html, body, .page { width:100%; max-width:100%; overflow-x:hidden !important; -webkit-text-size-adjust:100%; }
-              *, *::before, *::after { max-width:100%; box-sizing:border-box; }
-              .section { width:100%; padding-inline:16px !important; overflow-x:hidden !important; }
-              .container, .project--finance .container, .finance-project-detail, .finance-project-detail-inner, .finance-case-content, .finance-smart-panel, .finance-results, .finance-case-close { width:100% !important; max-width:calc(100vw - 24px) !important; min-width:0 !important; margin-inline:auto !important; overflow-x:hidden !important; }
-              .hero-grid, .split, .finance-showcase, .finance-case-layout, .finance-story-card, .finance-story-card--compact, .finance-story-points, .finance-feature-list, .finance-research-methods, .finance-insight-grid, .finance-wireframe-grid, .finance-evolution-grid, .finance-feedback-grid, .finance-outcome-strip, .finance-learning-grid, .finance-smart-lab, .finance-smart-showcase, .finance-smart-current, .finance-smart-metrics, .finance-functions-blocks, .project-meta { display:grid !important; grid-template-columns:minmax(0,1fr) !important; grid-auto-columns:unset !important; gap:16px !important; width:100% !important; max-width:100% !important; margin-inline:0 !important; overflow:visible !important; transform:none !important; }
-              .finance-case-rail { display:none !important; }
-              .finance-case-chapter, .finance-smart-lab, .finance-case-close.finance-results, .finance-story-card--compact, .finance-feedback-card, .finance-outcome-card, .finance-learning-card, .finance-wireframe-card, .finance-evolution-card, .finance-function-card { width:100% !important; max-width:100% !important; min-width:0 !important; padding:18px !important; border-radius:24px !important; overflow:hidden !important; }
-              .finance-case-head h3, .finance-smart-intro h3, .finance-results.finance-case-close h3, .finance-story-card--compact h3 { max-width:100% !important; font-size:clamp(1.85rem,10vw,3rem) !important; line-height:1 !important; letter-spacing:-.07em !important; }
-              .finance-case-head p, .finance-smart-intro p, .finance-story-copy p, .finance-wireframe-card p, .finance-evolution-card p, .finance-feedback-card p, .finance-outcome-card p, .finance-learning-card p, .project-desc, .lead { font-size:.96rem !important; line-height:1.6 !important; }
-              .finance-wireframe-thumb, .finance-evolution-thumb, .finance-detail-media, .finance-screen-frame, .mockup { display:grid !important; place-items:center !important; width:100% !important; height:clamp(230px,52svh,380px) !important; padding:12px !important; overflow:hidden !important; }
-              .finance-wireframe-thumb img, .finance-evolution-thumb img, .finance-detail-media img, .finance-screen-frame img, .mockup img { width:100% !important; height:100% !important; max-height:100% !important; object-fit:contain !important; object-position:center top !important; transform:none !important; }
-              .finance-mascot-stage { order:-1 !important; min-height:clamp(330px,68svh,420px) !important; overflow:visible !important; }
-              .finance-mascot-peek { right:50% !important; top:auto !important; bottom:0 !important; width:min(78vw,310px) !important; translate:50% 0 !important; transform:translate3d(0,0,0) scale(.96) rotate(1deg) !important; }
-              .hero-actions, .finance-cta-actions, .finance-smart-controls { display:grid !important; grid-template-columns:1fr !important; gap:10px !important; }
-              .btn, .finance-cta-actions .btn, .finance-smart-control, .finance-project-close-btn { width:100% !important; min-width:0 !important; }
-              .finance-project-close-scene { width:100% !important; min-height:0 !important; margin:30px 0 0 !important; padding:0 0 max(18px, env(safe-area-inset-bottom)) !important; border-radius:26px 26px 0 0 !important; overflow:hidden !important; background:#dff7ff !important; box-shadow:none !important; }
-              .finance-project-close-picture { position:relative !important; inset:auto !important; width:100% !important; height:auto !important; min-height:0 !important; }
-              .finance-project-close-picture img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; object-position:center bottom !important; }
-              .finance-project-close-actions { position:relative !important; inset:auto !important; margin:-78px auto 0 !important; padding:0 16px !important; z-index:2 !important; }
-              .finance-image-modal__content { width:min(92vw,430px) !important; max-height:calc(100svh - 24px) !important; padding:54px 12px 14px !important; }
-              .finance-image-modal__frame, .finance-image-modal__frame.is-phone-frame { width:min(78vw,330px) !important; height:min(72svh,640px) !important; }
-            }
-            @media (max-width: 700px) {
-              .nav { display:none !important; }
-              .hero { padding-top:42px !important; }
-              .section { padding-top:72px !important; padding-bottom:72px !important; }
-              .finance-case-chapter, .finance-smart-lab, .finance-case-close.finance-results, .finance-story-card--compact { margin-top:24px !important; }
-            }
-            @media (max-width: 390px) {
-              .finance-mascot-stage { min-height:315px !important; }
-              .finance-wireframe-thumb, .finance-evolution-thumb, .finance-detail-media, .finance-screen-frame, .mockup { height:clamp(210px,48svh,330px) !important; }
-            }
-          </style>
-        `;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>treecatdesign | UX Portfolio</title>
+  <link rel="stylesheet" href="./css/styles.css?v=mobile-clean-1" />
+  <link rel="stylesheet" href="./css/responsive-fixes.css?v=mobile-clean-1" />
+</head>
 
-        try {
-          const response = await fetch(withVersion("./treecatdesign/index.html"), { cache: "no-store" });
+<body>
+  <div class="page">
+    <div class="noise"></div>
 
-          if (!response.ok) {
-            throw new Error(`No se pudo cargar el portafolio: ${response.status}`);
-          }
+    <header class="nav">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <span class="brand-mark"></span>
+        <span>treecatdesign</span>
+      </a>
 
-          let html = await response.text();
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#hormigon">Hormigon</a>
+        <a href="#innovadora">Innovadora</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
 
-          if (!/<base\s/i.test(html)) {
-            html = html.replace(/<head>/i, '<head>\n  <base href="./treecatdesign/">');
-          }
+    <main>
+      <section class="section hero" id="inicio">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow reveal">UX Designer · Product Design · UI Systems</div>
 
-          html = html.replace(
-            /<meta\s+name=["']viewport["'][^>]*>/i,
-            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
-          );
+            <h1 class="hero-title reveal" style="--delay: 90ms;">
+              Treecat
+              <span>Design</span>
+            </h1>
 
-          html = html.replace(
-            /<link\s+rel=["']stylesheet["']\s+href=["']\.\/css\/styles\.css["']\s*\/?>/i,
-            `<link rel="stylesheet" href="${withVersion("./css/styles.css")}" />`
-          );
+            <p class="hero-copy reveal" style="--delay: 180ms;">
+              Portafolio UX enfocado en crear experiencias digitales claras, útiles y visualmente memorables.
+              Diseño productos desde la investigación, estructura, interacción e interfaz final.
+            </p>
 
-          html = html.replace(
-            /<\/head>/i,
-            `  <link rel="stylesheet" href="${withVersion("./css/responsive-fixes.css")}" />\n${mobileHardFixes}\n</head>`
-          );
+            <div class="hero-actions reveal" style="--delay: 270ms;">
+              <a class="btn btn-primary" href="#hormigon">Ver proyectos</a>
+              <a class="btn btn-secondary" href="#sobre-mi">Conocer mi proceso</a>
+            </div>
+          </div>
 
-          html = html.replace(
-            /<script\s+src=["']\.\/js\/main\.js["']\s+defer><\/script>/i,
-            `<script src="${withVersion("./js/main.js")}" defer><\/script>`
-          );
+          <div class="hero-logo-wrap reveal" style="--delay: 180ms;">
+            <img
+              class="hero-logo"
+              src="./assets/treecat-logo.jpeg"
+              alt="Logo principal de treecatdesign"
+            />
+          </div>
+        </div>
+      </section>
 
-          document.open();
-          document.write(html);
-          document.close();
-        } catch (error) {
-          window.location.replace("./treecatdesign/");
-        }
-      })();
-    </script>
-  </body>
+      <section class="section about" id="sobre-mi">
+        <div class="container split">
+          <div class="reveal">
+            <p class="section-kicker">Sobre mí</p>
+            <h2>Diseño productos claros para problemas cotidianos.</h2>
+          </div>
+
+          <div>
+            <p class="lead reveal" style="--delay: 80ms;">
+              Soy Alejandro Ramírez y estoy construyendo mi camino como UX/UI Designer desde soluciones visuales y digitales reales.
+            </p>
+
+            <p class="muted reveal" style="--delay: 160ms;">
+              Hormigon nació de una necesidad cercana: dejar de depender de una hoja de Excel para entender el dinero del mes. Me interesa diseñar productos claros, humanos y fáciles de usar; mi valor está en aprender rápido, iterar con feedback y convertir problemas cotidianos en experiencias mejor pensadas.
+            </p>
+
+            <div class="pill-grid reveal" style="--delay: 240ms;">
+              <span class="pill">UX/UI Junior</span>
+              <span class="pill">Wireframes</span>
+              <span class="pill">UI Design</span>
+              <span class="pill">Feedback loops</span>
+              <span class="pill">Prototyping</span>
+              <span class="pill">Responsive Web</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project project--finance" id="hormigon">
+        <div class="finance-bg-polygons" aria-hidden="true">
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+          <span class="finance-bg-polygon"></span>
+        </div>
+
+        <div class="container">
+          <div class="finance-showcase">
+            <div class="finance-showcase-copy reveal">
+              <p class="project-number">Proyecto 01</p>
+              <h2>Hormigon</h2>
+
+              <p class="project-desc">
+                Una app creada para transformar el control del dinero en una experiencia simple, móvil e interactiva. El proyecto nace de una situación real: muchas personas no saben con claridad cuánto gastan, en qué se les va el dinero o cómo llegarán a fin de mes con deudas, compras a meses e ingresos variables.
+              </p>
+
+              <div class="project-meta">
+                <div class="meta-card">
+                  <small>Rol</small>
+                  <strong>UX/UI Designer</strong>
+                </div>
+                <div class="meta-card">
+                  <small>Tipo</small>
+                  <strong>Aplicación web</strong>
+                </div>
+                <div class="meta-card">
+                  <small>Enfoque</small>
+                  <strong>Finanzas personales</strong>
+                </div>
+              </div>
+
+              <div class="finance-feature-list" aria-label="Características principales de la aplicación">
+                <div class="finance-feature-item">Estadísticas accionables</div>
+                <div class="finance-feature-item">Línea de tiempo de pagos</div>
+                <div class="finance-feature-item">Presupuestos con límite</div>
+                <div class="finance-feature-item">Metas de ahorro visibles</div>
+              </div>
+
+              <div class="finance-cta-actions reveal" style="--delay: 280ms;">
+                <button class="btn finance-btn-primary finance-project-toggle" type="button" data-finance-toggle aria-expanded="false" aria-controls="hormigon-completo">Ver proyecto completo</button>
+                <button class="btn finance-btn-secondary btn-disabled" type="button" disabled>Figma próximamente</button>
+                <a class="btn finance-btn-secondary" href="#contacto">Contacto</a>
+              </div>
+            </div>
+
+            <div class="finance-mascot-stage reveal" style="--delay: 120ms;" aria-hidden="true">
+              <div class="finance-mascot-peek">
+                <div class="finance-mascot-float">
+                  <picture class="finance-mascot-picture">
+                    <source srcset="./assets/mascota-parada-celular.png" media="(max-width: 700px)" />
+                    <img
+                      class="finance-mascot-img"
+                      src="./assets/asomado.webp"
+                      alt="Mascota de Hormigon asomándose junto al caso de estudio"
+                      width="630"
+                      height="760"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="finance-project-detail" id="hormigon-completo" aria-hidden="true">
+            <div class="finance-project-detail-inner">
+            <div class="finance-story-card finance-story-card--compact reveal" id="hormigon-historia">
+              <div>
+                <p class="section-kicker">Contexto breve</p>
+                <h3>Una app para registrar, entender y anticipar el dinero del mes.</h3>
+                <figure class="finance-story-mascot" aria-label="Mascota tomando una moneda para representar el origen de la app">
+                  <img
+                    src="./assets/mascota-necesidad-real.webp"
+                    alt="Mascota tomando una moneda como metáfora de control financiero"
+                    width="760"
+                    height="465"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+
+              <div class="finance-story-copy">
+                <p>
+                  Hormigon nace de una necesidad real: controlar finanzas personales desde Excel funcionaba, pero actualizar gastos, ingresos extra, deudas familiares y compras a meses se volvió tedioso.
+                </p>
+                <p>
+                  La app está pensada para personas que ya intentan organizarse, pero necesitan registrar movimientos desde el celular, revisar cómo va el mes y anticipar pagos sin depender de una computadora.
+                </p>
+
+                <div class="finance-problem-compact reveal" style="--delay: 120ms;">
+                  <span>Problema + oportunidad</span>
+                  <p>Las herramientas manuales ayudan a organizarse, pero fallan cuando registrar dinero exige demasiado esfuerzo justo en momentos cotidianos.</p>
+                  <strong>¿Cómo podríamos hacer que revisar y registrar finanzas sea tan inmediato como consultar el celular?</strong>
+                </div>
+
+                <div class="finance-story-points" aria-label="Objetivos principales del producto">
+                  <div class="finance-story-point">Registrar rápido</div>
+                  <div class="finance-story-point">Entender patrones</div>
+                  <div class="finance-story-point">Anticipar pagos</div>
+                </div>
+              </div>
+            </div>
+
+            <section class="finance-case-chapter finance-case-research reveal" aria-labelledby="finance-research-title">
+              <div class="finance-case-layout">
+                <aside class="finance-case-rail" aria-hidden="true">
+                  <span>01</span>
+                  <i></i>
+                </aside>
+
+                <div class="finance-case-content">
+                  <div class="finance-case-head">
+                    <p class="section-kicker">Investigación ligera</p>
+                    <h3 id="finance-research-title">Qué observé antes de diseñar.</h3>
+                    <p>
+                      Validé el problema con uso real en casa, conversaciones informales y síntesis de patrones. El objetivo era separar una molestia personal de una fricción repetible.
+                    </p>
+                  </div>
+
+                  <div class="finance-research-methods" aria-label="Métodos utilizados durante la investigación">
+                    <article class="finance-method-card reveal" style="--delay: 80ms;">
+                      <span>Contexto</span>
+                      <strong>Uso real en casa</strong>
+                      <p>Observé cuándo se rompía el hábito: al dejar compras pendientes para capturarlas después, al mezclar deudas con gastos del mes y al depender del escritorio.</p>
+                    </article>
+
+                    <article class="finance-method-card reveal" style="--delay: 150ms;">
+                      <span>Validación</span>
+                      <strong>Conversaciones informales</strong>
+                      <p>Contrasté el problema con amigos y familiares que usan Excel, notas o apps bancarias aisladas para entender qué soluciones ya intentaban.</p>
+                    </article>
+
+                    <article class="finance-method-card reveal" style="--delay: 220ms;">
+                      <span>Síntesis</span>
+                      <strong>Patrones de comportamiento</strong>
+                      <p>Agrupé las respuestas por fricciones: captura tardía, falta de visibilidad del mes, ingresos variables y dificultad para anticipar pagos futuros.</p>
+                    </article>
+                  </div>
+
+                  <div class="finance-insight-board" aria-label="Hallazgos principales de investigación">
+                    <div class="finance-insight-board-head">
+                      <span>Insights clave</span>
+                      <p>El problema no era falta de intención: era esfuerzo, momento y claridad.</p>
+                    </div>
+
+                    <div class="finance-insight-grid">
+                      <article class="finance-insight-card reveal" style="--delay: 90ms;">
+                        <small>Insight 01</small>
+                        <h4>La fricción mata el hábito.</h4>
+                        <p>Cuando el registro depende de abrir una hoja de cálculo, el usuario pospone la captura y termina perdiendo el control del mes.</p>
+                      </article>
+
+                      <article class="finance-insight-card reveal" style="--delay: 170ms;">
+                        <small>Insight 02</small>
+                        <h4>El dinero se mueve en momentos pequeños.</h4>
+                        <p>Los gastos, préstamos familiares e ingresos extra ocurren durante el día; la herramienta debía estar disponible justo en ese momento.</p>
+                      </article>
+
+                      <article class="finance-insight-card reveal" style="--delay: 250ms;">
+                        <small>Insight 03</small>
+                        <h4>La claridad debe responder “¿cómo voy?”.</h4>
+                        <p>El usuario no solo necesita registrar; necesita entender si puede gastar, ahorrar o si debe ajustar antes de cerrar el mes.</p>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-case-chapter finance-case-exploration reveal" aria-labelledby="finance-exploration-title">
+              <div class="finance-case-layout">
+                <aside class="finance-case-rail" aria-hidden="true">
+                  <span>02</span>
+                  <i></i>
+                </aside>
+
+                <div class="finance-case-content">
+                  <div class="finance-case-head">
+                    <p class="section-kicker">Exploración inicial</p>
+                    <h3 id="finance-exploration-title">Wireframes para ordenar la experiencia antes del diseño final.</h3>
+                    <p>
+                      Antes de pulir la interfaz visual, exploré la estructura base de las pantallas principales: inicio, registro de gasto, cuentas o tarjetas y metas de ahorro. La intención era validar jerarquía, flujo y carga de información antes de invertir tiempo en acabado visual.
+                    </p>
+                  </div>
+
+                  <div class="finance-wireframe-grid" aria-label="Exploraciones iniciales de wireframes">
+                    <article class="finance-wireframe-card reveal" style="--delay: 70ms;">
+                      <button
+                        class="finance-function-zoom finance-wireframe-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/wireframe-home.png"
+                        data-full-title="Home / resumen financiero"
+                        data-modal-frame="phone"
+                        aria-label="Ver wireframe completo de Home / resumen financiero"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/wireframe-home.png"
+                          alt="Wireframe inicial del home de Hormigón con métricas, mascota, presupuesto y registros recientes."
+                          width="390"
+                          height="843"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Inicio / resumen financiero</h4>
+                      <p>Exploración de jerarquía para balance, historial, presupuesto y acciones frecuentes.</p>
+                    </article>
+
+                    <article class="finance-wireframe-card reveal" style="--delay: 130ms;">
+                      <button
+                        class="finance-function-zoom finance-wireframe-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/wireframe-registro-gasto.png"
+                        data-full-title="Registro de gasto"
+                        data-modal-frame="phone"
+                        aria-label="Ver wireframe completo de Registro de gasto"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/wireframe-registro-gasto.png"
+                          alt="Wireframe del formulario para registrar un gasto en Hormigón."
+                          width="390"
+                          height="843"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Registro de gasto</h4>
+                      <p>Estructura inicial para capturar monto, fecha, descripción, etiqueta y forma de pago.</p>
+                    </article>
+
+                    <article class="finance-wireframe-card reveal" style="--delay: 190ms;">
+                      <button
+                        class="finance-function-zoom finance-wireframe-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/wireframe-metas-ahorro.png"
+                        data-full-title="Metas / ahorro"
+                        data-modal-frame="phone"
+                        aria-label="Ver wireframe completo de Metas / ahorro"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/wireframe-metas-ahorro.png"
+                          alt="Wireframe de la pantalla de metas de ahorro de Hormigón."
+                          width="390"
+                          height="843"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Metas / ahorro</h4>
+                      <p>Distribución inicial para visualizar avance mensual y objetivos de ahorro.</p>
+                    </article>
+
+                    <article class="finance-wireframe-card reveal" style="--delay: 250ms;">
+                      <button
+                        class="finance-function-zoom finance-wireframe-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/wireframe-tarjetas-cuentas.png"
+                        data-full-title="Tarjetas o cuentas"
+                        data-modal-frame="phone"
+                        aria-label="Ver wireframe completo de Tarjetas o cuentas"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/wireframe-tarjetas-cuentas.png"
+                          alt="Wireframe del formulario para registrar tarjeta o cuenta en Hormigón."
+                          width="390"
+                          height="843"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Tarjetas o cuentas</h4>
+                      <p>Exploración para registrar diferentes fuentes de dinero y tarjetas.</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-case-chapter finance-case-evolution reveal" aria-labelledby="finance-evolution-title">
+              <div class="finance-case-layout">
+                <aside class="finance-case-rail" aria-hidden="true">
+                  <span>03</span>
+                  <i></i>
+                </aside>
+
+                <div class="finance-case-content">
+                  <div class="finance-case-head">
+                    <p class="section-kicker">Evolución visual</p>
+                    <h3 id="finance-evolution-title">Del wireframe a una pantalla más accionable.</h3>
+                    <p>
+                      La pantalla principal evolucionó desde una estructura base hacia una versión más completa y accionable. Los cambios no buscaban replicar el Figma al 100%, sino mejorar claridad, jerarquía y utilidad conforme avanzó el producto.
+                    </p>
+                  </div>
+
+                  <div class="finance-evolution-grid" aria-label="Evolución visual de la pantalla principal">
+                    <article class="finance-evolution-card reveal" style="--delay: 70ms;">
+                      <button
+                        class="finance-function-zoom finance-evolution-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/evolucion-wireframe.png"
+                        data-full-title="Wireframe inicial"
+                        data-modal-frame="phone"
+                        aria-label="Ver etapa Wireframe inicial"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/evolucion-wireframe.png"
+                          alt="Wireframe inicial de la pantalla principal de Hormigón."
+                          width="390"
+                          height="843"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Wireframe inicial</h4>
+                      <p>Definí estructura, jerarquía y elementos principales del home.</p>
+                    </article>
+
+                    <article class="finance-evolution-card reveal" style="--delay: 140ms;">
+                      <button
+                        class="finance-function-zoom finance-evolution-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/evolucion-figma.jpeg"
+                        data-full-title="Primera propuesta visual"
+                        data-modal-frame="phone"
+                        aria-label="Ver etapa Primera propuesta visual"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/evolucion-figma.jpeg"
+                          alt="Primera propuesta visual en Figma de la pantalla principal de Hormigón."
+                          width="779"
+                          height="1600"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Primera propuesta visual</h4>
+                      <p>Exploré una interfaz más limpia, amigable y centrada en la mascota.</p>
+                    </article>
+
+                    <article class="finance-evolution-card reveal" style="--delay: 210ms;">
+                      <button
+                        class="finance-function-zoom finance-evolution-thumb"
+                        type="button"
+                        data-full-image="./assets/hormigon/proceso/evolucion-final.jpeg"
+                        data-full-title="Versión final refinada"
+                        data-modal-frame="phone"
+                        aria-label="Ver etapa Versión final refinada"
+                      >
+                        <img
+                          src="./assets/hormigon/proceso/evolucion-final.jpeg"
+                          alt="Versión final refinada de la pantalla principal de Hormigón."
+                          width="781"
+                          height="1600"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </button>
+                      <h4>Versión final refinada</h4>
+                      <p>Ajusté la pantalla para mostrar balance proyectado, salud financiera y metas con mayor claridad.</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-case-chapter finance-case-feedback reveal" aria-labelledby="finance-feedback-title">
+              <div class="finance-case-layout">
+                <aside class="finance-case-rail" aria-hidden="true">
+                  <span>04</span>
+                  <i></i>
+                </aside>
+
+                <div class="finance-case-content">
+                  <div class="finance-case-head">
+                    <p class="section-kicker">Iteraciones por feedback</p>
+                    <h3 id="finance-feedback-title">Cuatro ajustes que hicieron el producto más realista.</h3>
+                    <p>
+                      La retroalimentación ayudó a detectar supuestos débiles y convertirlos en decisiones concretas. Cada caso muestra qué existía antes, qué problema apareció, qué cambio apliqué y qué mejoró.
+                    </p>
+                  </div>
+
+                  <div class="finance-feedback-grid" aria-label="Ejemplos de iteración por feedback">
+                    <article class="finance-feedback-card reveal" style="--delay: 70ms;">
+                      <span>01</span>
+                      <h4>Ingresos variables</h4>
+                      <dl>
+                        <div><dt>Antes</dt><dd>El flujo asumía sueldo fijo y fechas de pago predecibles.</dd></div>
+                        <div><dt>Feedback</dt><dd>Una persona por honorarios no podía representar su realidad financiera.</dd></div>
+                        <div><dt>Cambio aplicado</dt><dd>Agregar captura manual de ingresos cuando ocurren.</dd></div>
+                        <div><dt>Resultado</dt><dd>La app sirve para freelancers, ingresos extra y pagos irregulares.</dd></div>
+                      </dl>
+                    </article>
+
+                    <article class="finance-feedback-card reveal" style="--delay: 130ms;">
+                      <span>02</span>
+                      <h4>Varias cuentas o tarjetas</h4>
+                      <dl>
+                        <div><dt>Antes</dt><dd>El dinero se entendía como un saldo general.</dd></div>
+                        <div><dt>Feedback</dt><dd>El usuario suele separar débito, efectivo, cuentas compartidas o tarjetas.</dd></div>
+                        <div><dt>Cambio aplicado</dt><dd>Preparar el modelo para registrar movimientos por cuenta.</dd></div>
+                        <div><dt>Resultado</dt><dd>La lectura del disponible se vuelve más fiel a la vida diaria.</dd></div>
+                      </dl>
+                    </article>
+
+                    <article class="finance-feedback-card reveal" style="--delay: 190ms;">
+                      <span>03</span>
+                      <h4>Inicio demasiado extenso</h4>
+                      <dl>
+                        <div><dt>Antes</dt><dd>El home reunía métricas, gráficas, deudas, metas e historial.</dd></div>
+                        <div><dt>Feedback</dt><dd>La pantalla se sentía pesada para una consulta rápida.</dd></div>
+                        <div><dt>Cambio aplicado</dt><dd>Separar lectura profunda y dejar el home para acciones frecuentes.</dd></div>
+                        <div><dt>Resultado</dt><dd>Menos ruido visual y mejor ritmo al abrir la app.</dd></div>
+                      </dl>
+                    </article>
+
+                    <article class="finance-feedback-card reveal" style="--delay: 250ms;">
+                      <span>04</span>
+                      <h4>Simplificación del inicio</h4>
+                      <dl>
+                        <div><dt>Antes</dt><dd>El primer vistazo intentaba explicar todo el producto.</dd></div>
+                        <div><dt>Feedback</dt><dd>La saturación hacía más difícil decidir qué hacer primero.</dd></div>
+                        <div><dt>Cambio aplicado</dt><dd>Priorizar resumen financiero, historial y botón de registro.</dd></div>
+                        <div><dt>Resultado</dt><dd>La experiencia inicial queda más directa y lista para validar.</dd></div>
+                      </dl>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-app-value finance-smart-lab reveal" aria-label="Solución final de Hormigon">
+              <span class="finance-solution-number" aria-hidden="true">05</span>
+              <div class="finance-smart-intro">
+                <p class="section-kicker">Solución final</p>
+                <h3>Una app para registrar, entender y anticipar.</h3>
+                <p>
+                  La propuesta final reduce el esfuerzo de captura y convierte los movimientos del mes en señales simples para decidir mejor.
+                </p>
+
+                <div class="finance-value-badges" aria-label="Beneficios principales">
+                  <span>Registro rápido</span>
+                  <span>Lectura clara</span>
+                  <span>Pagos anticipados</span>
+                </div>
+
+                <div class="finance-smart-metrics" aria-label="Indicadores de valor de la app">
+                  <div class="finance-smart-metric">
+                    <small>Módulos clave</small>
+                    <strong>04</strong>
+                    <span>acciones y lecturas esenciales</span>
+                  </div>
+                  <div class="finance-smart-metric">
+                    <small>Foco UX</small>
+                    <strong>Menos ruido</strong>
+                    <span>home más directo y escaneable</span>
+                  </div>
+                  <div class="finance-smart-metric">
+                    <small>Aprendizaje</small>
+                    <strong>Iterar</strong>
+                    <span>feedback convertido en estructura</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="finance-smart-showcase" aria-label="Demostración interactiva de pantallas de Hormigon">
+                <div class="finance-smart-stage">
+                  <span class="finance-smart-orbit finance-smart-orbit--one" aria-hidden="true"></span>
+                  <span class="finance-smart-orbit finance-smart-orbit--two" aria-hidden="true"></span>
+
+                  <div class="finance-smart-device-wrap">
+                    <button
+                      class="finance-function-zoom finance-smart-device"
+                      type="button"
+                      data-smart-main-device
+                      data-full-image="./assets/hormigon/proceso/registrar-gasto-final.jpeg"
+                      data-full-title="Registrar movimientos"
+                      aria-label="Ver imagen completa de Registrar movimientos"
+                    >
+                      <span class="finance-phone-speaker" aria-hidden="true"></span>
+                      <img
+                        src="./assets/hormigon/proceso/registrar-gasto-final.jpeg"
+                        alt="Pantalla final para registrar ingreso o egreso en Hormigón, con campos de cantidad, fecha, descripción, etiquetas y forma de pago."
+                        width="782"
+                        height="1600"
+                        loading="lazy"
+                        decoding="async"
+                        data-smart-main-image
+                      />
+                      <span class="finance-phone-shine" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="finance-smart-floating-card finance-smart-floating-card--top" aria-hidden="true">
+                      <span></span>
+                      <strong>Próximo corte</strong>
+                      <small>$4,250 estimado</small>
+                    </div>
+
+                    <div class="finance-smart-floating-card finance-smart-floating-card--bottom" aria-hidden="true">
+                      <span></span>
+                      <strong>Meta activa</strong>
+                      <small>72% completada</small>
+                    </div>
+                  </div>
+                </div>
+
+                  <div class="finance-smart-panel">
+                    <div class="finance-smart-panel-head">
+                    <span>Módulos clave</span>
+                  </div>
+
+                  <div class="finance-smart-controls" role="list" aria-label="Seleccionar función destacada">
+                    <button
+                      class="finance-smart-control is-active"
+                      type="button"
+                      role="listitem"
+                      data-smart-title="Registrar movimientos"
+                      data-smart-copy="Capturar ingresos o egresos desde el celular evita dejar movimientos pendientes y permite clasificar cada registro con etiquetas y forma de pago."
+                      data-smart-image="./assets/hormigon/proceso/registrar-gasto-final.jpeg"
+                      data-smart-alt="Pantalla final para registrar ingreso o egreso en Hormigón, con campos de cantidad, fecha, descripción, etiquetas y forma de pago."
+                    >
+                      <span>01</span>
+                      <strong>Registrar movimientos</strong>
+                      <small>Acción frecuente</small>
+                      <p class="finance-smart-control-copy">Capturar ingresos o egresos desde el celular evita dejar movimientos pendientes y permite clasificar cada registro.</p>
+                    </button>
+
+                    <button
+                      class="finance-smart-control"
+                      type="button"
+                      role="listitem"
+                      data-smart-title="Entender gastos"
+                      data-smart-copy="Identifica categorías con mayor impacto para reconocer patrones y ajustar decisiones durante el mes."
+                      data-smart-image="./assets/finance-feature-ranking-gastos.jpeg"
+                      data-smart-alt="Captura del ranking de gastos por categoría"
+                    >
+                      <span>02</span>
+                      <strong>Entender gastos</strong>
+                      <small>Patrones y categorías</small>
+                      <p class="finance-smart-control-copy">Identifica categorías con mayor impacto para reconocer patrones y ajustar decisiones durante el mes.</p>
+                    </button>
+
+                    <button
+                      class="finance-smart-control"
+                      type="button"
+                      role="listitem"
+                      data-smart-title="Anticipar pagos"
+                      data-smart-copy="Muestra deudas, compras a meses y pagos próximos para que el usuario entienda qué dinero ya está comprometido."
+                      data-smart-image="./assets/finance-feature-linea-tiempo.jpeg"
+                      data-smart-alt="Captura de la función Línea de tiempo de pagos"
+                    >
+                      <span>03</span>
+                      <strong>Anticipar pagos</strong>
+                      <small>Deudas y compromisos</small>
+                      <p class="finance-smart-control-copy">Muestra deudas, compras a meses y pagos próximos para que el usuario entienda qué dinero ya está comprometido.</p>
+                    </button>
+
+                    <button
+                      class="finance-smart-control"
+                      type="button"
+                      role="listitem"
+                      data-smart-title="Metas de ahorro"
+                      data-smart-copy="Convierte el ahorro en progreso visible para que el usuario vea avances, retiros y abonos de forma simple."
+                      data-smart-image="./assets/finance-feature-metas.jpeg"
+                      data-smart-alt="Captura de metas de ahorro y progreso"
+                    >
+                      <span>04</span>
+                      <strong>Seguir metas</strong>
+                      <small>Ahorro visible</small>
+                      <p class="finance-smart-control-copy">Convierte el ahorro en progreso visible para que el usuario vea avances, retiros y abonos de forma simple.</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-case-chapter finance-results finance-case-close reveal" aria-labelledby="finance-results-title">
+              <div class="finance-case-layout">
+                <aside class="finance-case-rail" aria-hidden="true">
+                  <span>06</span>
+                  <i></i>
+                </aside>
+
+                <div class="finance-case-content">
+                  <div class="finance-case-head finance-results-head">
+                    <p class="section-kicker">Resultados, aprendizajes y próximos pasos</p>
+                    <h3 id="finance-results-title">Un avance honesto desde una necesidad real.</h3>
+                    <p>
+                      Hormigon todavía no presume métricas grandes: el aprendizaje principal fue convertir un problema real en un flujo más claro, probarlo con datos cotidianos y preparar el producto para validación externa.
+                    </p>
+                  </div>
+
+                  <div class="finance-outcome-strip" aria-label="Resultados del proyecto Hormigon">
+                    <article class="finance-outcome-card reveal" style="--delay: 80ms;">
+                      <small>Resultado real</small>
+                      <strong>Menos Excel</strong>
+                      <span>se dejó de depender de la hoja de cálculo como única herramienta de seguimiento</span>
+                    </article>
+
+                    <article class="finance-outcome-card reveal" style="--delay: 150ms;">
+                      <small>Feedback aplicado</small>
+                      <strong>Más casos</strong>
+                      <span>ingresos variables y múltiples cuentas dejaron de ser escenarios no considerados</span>
+                    </article>
+
+                    <article class="finance-outcome-card reveal" style="--delay: 220ms;">
+                      <small>Producto</small>
+                      <strong>Más claro</strong>
+                      <span>el inicio se simplificó para reducir saturación y preparar pruebas externas</span>
+                    </article>
+                  </div>
+
+                  <div class="finance-learning-grid" aria-label="Aprendizajes y próximos pasos del caso">
+                    <article class="finance-learning-card reveal" style="--delay: 90ms;">
+                      <span>Próximo paso</span>
+                      <h4>Validar con usuarios externos.</h4>
+                      <p>Probar el prototipo con personas fuera del contexto familiar para detectar nuevas fricciones.</p>
+                    </article>
+
+                    <article class="finance-learning-card reveal" style="--delay: 170ms;">
+                      <span>Próximos pasos</span>
+                      <h4>Medir tiempo de registro.</h4>
+                      <p>Observar cuánto tarda una persona en registrar gasto, ingreso o deuda sin ayuda.</p>
+                    </article>
+
+                    <article class="finance-learning-card reveal" style="--delay: 250ms;">
+                      <span>Evolución</span>
+                      <h4>Documentar sistema visual y accesibilidad.</h4>
+                      <p>Ordenar componentes, estados, contraste e interacciones antes de una beta cerrada.</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="finance-project-close-scene reveal" aria-label="Cerrar proyecto Hormigon">
+              <picture class="finance-project-close-picture">
+                <img
+                  src="./assets/fondo-proyecto1.png"
+                  alt="Mascota observando hormigas que transportan monedas"
+                  width="1672"
+                  height="846"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+
+              <div class="finance-project-close-actions">
+                <button class="btn finance-btn-primary finance-project-close-btn" type="button" data-finance-close>Volver al inicio</button>
+              </div>
+            </section>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project project--innovadora" id="innovadora">
+        <div class="innovadora-pantone-bg" aria-hidden="true">
+          <div class="innovadora-pantone-row">
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#ffcd00;" title="PANTONE 116 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ffb81c;" title="PANTONE 1235 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff8200;" title="PANTONE 151 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff6a13;" title="PANTONE 1585 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff4f00;" title="PANTONE Orange 021 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ef3340;" title="PANTONE 032 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c8102e;" title="PANTONE 186 C"></span>
+              <span class="innovadora-pantone-card" style="background:#da291c;" title="PANTONE 485 C"></span>
+              <span class="innovadora-pantone-card" style="background:#e11d48;" title="PANTONE 7424 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c2185b;" title="PANTONE 214 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#ffcd00;" title="PANTONE 116 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ffb81c;" title="PANTONE 1235 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff8200;" title="PANTONE 151 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff6a13;" title="PANTONE 1585 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff4f00;" title="PANTONE Orange 021 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ef3340;" title="PANTONE 032 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c8102e;" title="PANTONE 186 C"></span>
+              <span class="innovadora-pantone-card" style="background:#da291c;" title="PANTONE 485 C"></span>
+              <span class="innovadora-pantone-card" style="background:#e11d48;" title="PANTONE 7424 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c2185b;" title="PANTONE 214 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#ffcd00;" title="PANTONE 116 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ffb81c;" title="PANTONE 1235 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff8200;" title="PANTONE 151 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff6a13;" title="PANTONE 1585 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ff4f00;" title="PANTONE Orange 021 C"></span>
+              <span class="innovadora-pantone-card" style="background:#ef3340;" title="PANTONE 032 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c8102e;" title="PANTONE 186 C"></span>
+              <span class="innovadora-pantone-card" style="background:#da291c;" title="PANTONE 485 C"></span>
+              <span class="innovadora-pantone-card" style="background:#e11d48;" title="PANTONE 7424 C"></span>
+              <span class="innovadora-pantone-card" style="background:#c2185b;" title="PANTONE 214 C"></span>
+            </div>
+          </div>
+          <div class="innovadora-pantone-row">
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#b7d800;" title="PANTONE 381 C"></span>
+              <span class="innovadora-pantone-card" style="background:#84cc16;" title="PANTONE 375 C"></span>
+              <span class="innovadora-pantone-card" style="background:#43b02a;" title="PANTONE 361 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00b140;" title="PANTONE 354 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00a36c;" title="PANTONE 3405 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00bfb3;" title="PANTONE 3268 C"></span>
+              <span class="innovadora-pantone-card" style="background:#32d3c7;" title="PANTONE 3255 C"></span>
+              <span class="innovadora-pantone-card" style="background:#14b8a6;" title="PANTONE 7711 C"></span>
+              <span class="innovadora-pantone-card" style="background:#22c55e;" title="PANTONE 7480 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5eead4;" title="PANTONE 3242 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#b7d800;" title="PANTONE 381 C"></span>
+              <span class="innovadora-pantone-card" style="background:#84cc16;" title="PANTONE 375 C"></span>
+              <span class="innovadora-pantone-card" style="background:#43b02a;" title="PANTONE 361 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00b140;" title="PANTONE 354 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00a36c;" title="PANTONE 3405 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00bfb3;" title="PANTONE 3268 C"></span>
+              <span class="innovadora-pantone-card" style="background:#32d3c7;" title="PANTONE 3255 C"></span>
+              <span class="innovadora-pantone-card" style="background:#14b8a6;" title="PANTONE 7711 C"></span>
+              <span class="innovadora-pantone-card" style="background:#22c55e;" title="PANTONE 7480 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5eead4;" title="PANTONE 3242 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#b7d800;" title="PANTONE 381 C"></span>
+              <span class="innovadora-pantone-card" style="background:#84cc16;" title="PANTONE 375 C"></span>
+              <span class="innovadora-pantone-card" style="background:#43b02a;" title="PANTONE 361 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00b140;" title="PANTONE 354 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00a36c;" title="PANTONE 3405 C"></span>
+              <span class="innovadora-pantone-card" style="background:#00bfb3;" title="PANTONE 3268 C"></span>
+              <span class="innovadora-pantone-card" style="background:#32d3c7;" title="PANTONE 3255 C"></span>
+              <span class="innovadora-pantone-card" style="background:#14b8a6;" title="PANTONE 7711 C"></span>
+              <span class="innovadora-pantone-card" style="background:#22c55e;" title="PANTONE 7480 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5eead4;" title="PANTONE 3242 C"></span>
+            </div>
+          </div>
+          <div class="innovadora-pantone-row">
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#00a3e0;" title="PANTONE 2995 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0077c8;" title="PANTONE 3005 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0072ce;" title="PANTONE 285 C"></span>
+              <span class="innovadora-pantone-card" style="background:#2563eb;" title="PANTONE 2727 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4f46e5;" title="PANTONE 2725 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6366f1;" title="PANTONE 2726 C"></span>
+              <span class="innovadora-pantone-card" style="background:#7c3aed;" title="PANTONE 2665 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6f2dbd;" title="PANTONE 2597 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5b2c83;" title="PANTONE 2617 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4c1d95;" title="PANTONE 2685 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#00a3e0;" title="PANTONE 2995 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0077c8;" title="PANTONE 3005 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0072ce;" title="PANTONE 285 C"></span>
+              <span class="innovadora-pantone-card" style="background:#2563eb;" title="PANTONE 2727 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4f46e5;" title="PANTONE 2725 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6366f1;" title="PANTONE 2726 C"></span>
+              <span class="innovadora-pantone-card" style="background:#7c3aed;" title="PANTONE 2665 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6f2dbd;" title="PANTONE 2597 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5b2c83;" title="PANTONE 2617 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4c1d95;" title="PANTONE 2685 C"></span>
+            </div>
+            <div class="innovadora-pantone-group">
+              <span class="innovadora-pantone-card" style="background:#00a3e0;" title="PANTONE 2995 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0077c8;" title="PANTONE 3005 C"></span>
+              <span class="innovadora-pantone-card" style="background:#0072ce;" title="PANTONE 285 C"></span>
+              <span class="innovadora-pantone-card" style="background:#2563eb;" title="PANTONE 2727 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4f46e5;" title="PANTONE 2725 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6366f1;" title="PANTONE 2726 C"></span>
+              <span class="innovadora-pantone-card" style="background:#7c3aed;" title="PANTONE 2665 C"></span>
+              <span class="innovadora-pantone-card" style="background:#6f2dbd;" title="PANTONE 2597 C"></span>
+              <span class="innovadora-pantone-card" style="background:#5b2c83;" title="PANTONE 2617 C"></span>
+              <span class="innovadora-pantone-card" style="background:#4c1d95;" title="PANTONE 2685 C"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="project-head">
+            <div class="reveal">
+              <p class="project-number">Proyecto 02</p>
+              <h2>Innovadora: proyecto web real para empresa industrial</h2>
+            </div>
+
+            <div class="reveal" style="--delay: 120ms;">
+              <p class="project-desc">
+                Proyecto secundario de UI/web para una empresa industrial. El enfoque fue ordenar la presencia digital, mantener una identidad visual reconocible y presentar productos, confianza y contacto comercial sin venderlo como un caso UX profundo.
+              </p>
+
+              <div class="project-meta">
+                <div class="meta-card">
+                  <small>Rol</small>
+                  <strong>UI/Web Designer</strong>
+                </div>
+                <div class="meta-card">
+                  <small>Tipo</small>
+                  <strong>Proyecto web real</strong>
+                </div>
+                <div class="meta-card">
+                  <small>Estilo visual</small>
+                  <strong>Identidad industrial</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-flow" aria-label="Proceso del proyecto Innovadora">
+            <article class="case-card reveal">
+              <div>
+                <span class="case-tag">Contexto</span>
+                <h3>Una marca industrial necesitaba verse más clara en digital.</h3>
+                <p>
+                  La página organiza empresa, productos y contacto para que clientes industriales entiendan rápido qué ofrece Innovadora.
+                </p>
+              </div>
+              <div class="case-bottom">Marca · Productos · Contacto</div>
+            </article>
+
+            <article class="case-card reveal" style="--delay: 100ms;">
+              <div>
+                <span class="case-tag">Objetivo</span>
+                <h3>Convertir el sitio en una vitrina comercial directa.</h3>
+                <p>
+                  Prioricé una lectura rápida de servicios, productos y vías de contacto, con una estructura lista para crecer.
+                </p>
+              </div>
+              <div class="case-bottom">Color · Pintura · Sistema visual</div>
+            </article>
+
+            <article class="case-card reveal" style="--delay: 200ms;">
+              <div>
+                <span class="case-tag">Decisiones visuales</span>
+                <h3>Color, contraste y tono industrial como señales de marca.</h3>
+                <p>
+                  El fondo tipo Pantone, el azul corporativo y los acentos rojos dan continuidad visual sin quitar claridad al contenido.
+                </p>
+              </div>
+              <div class="case-bottom">Home · Productos · Confianza</div>
+            </article>
+
+            <article class="case-card reveal" style="--delay: 300ms;">
+              <div>
+                <span class="case-tag">Resultado</span>
+                <h3>Una experiencia responsive con personalidad industrial.</h3>
+                <p>
+                  El diseño queda listo para crecer con fichas técnicas, catálogos, buscador de productos y contenido comercial. El aprendizaje fue equilibrar identidad fuerte con lectura práctica.
+                </p>
+              </div>
+              <div class="case-bottom">Responsive · Escalable · Comercial</div>
+            </article>
+          </div>
+
+          <div class="preview-panel innovadora-preview-panel reveal">
+            <div class="innovadora-browser-mockup" aria-label="Vista previa visual de la página web de Innovadora">
+              <div class="innovadora-browser-top">
+                <div class="innovadora-browser-logo" aria-hidden="true"></div>
+                <div class="innovadora-browser-nav" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="innovadora-browser-search" aria-hidden="true"></div>
+              </div>
+
+              <div class="innovadora-browser-hero">
+                <div class="innovadora-browser-copy">
+                  <strong>Innovadora de Pinturas Industriales</strong>
+                  <p>
+                    Home visual con fondo Pantone, mensaje comercial directo y navegación enfocada en productos.
+                  </p>
+                  <div class="innovadora-browser-buttons" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="innovadora-palette-preview" aria-hidden="true">
+                  <span style="background:#ffcd00"></span>
+                  <span style="background:#ff4757"></span>
+                  <span style="background:#005691"></span>
+                  <span style="background:#00b140"></span>
+                  <span style="background:#00a3e0"></span>
+                  <span style="background:#7c3aed"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-copy">
+              <h3>Una web con identidad de color y enfoque comercial.</h3>
+              <p>
+                Esta sección del portafolio toma los colores y el estilo artístico del inicio de Innovadora: tarjetas tipo Pantone, azul corporativo, acentos vivos y una maqueta web que resume el diseño del home.
+              </p>
+
+              <div class="innovadora-mini-grid">
+                <div class="innovadora-mini-card">
+                  <small>Paleta</small>
+                  <strong>#005691 · #ff4757 · #ffd54f</strong>
+                </div>
+                <div class="innovadora-mini-card">
+                  <small>Contenido</small>
+                  <strong>Empresa, productos y contacto</strong>
+                </div>
+                <div class="innovadora-mini-card">
+                  <small>Experiencia</small>
+                  <strong>Responsive y fácil de explorar</strong>
+                </div>
+                <div class="innovadora-mini-card">
+                  <small>Identidad</small>
+                  <strong>Fondo Pantone animado</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto">
+        <div class="container">
+          <p class="section-kicker reveal">Contacto</p>
+          <h2 class="reveal" style="--delay: 80ms;">
+            Diseñemos experiencias digitales con intención.
+          </h2>
+          <p class="reveal" style="--delay: 160ms;">
+            Disponible para proyectos UX/UI, rediseño web, prototipos, sistemas visuales y experiencias digitales responsive.
+          </p>
+
+          <div class="hero-actions reveal" style="--delay: 240ms; justify-content:center;">
+            <a class="btn btn-primary" href="mailto:hola@treecatdesign.com">Email</a>
+            <button class="btn btn-secondary btn-disabled" type="button" disabled>LinkedIn próximamente</button>
+            <button class="btn btn-secondary btn-disabled" type="button" disabled>Figma próximamente</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>© 2026 treecatdesign</span>
+        <span>UX/UI Portfolio</span>
+      </div>
+    </footer>
+  </div>
+  <div class="finance-image-modal" data-finance-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="finance-modal-title">
+    <div class="finance-image-modal__backdrop" data-finance-modal-close></div>
+    <div class="finance-image-modal__content" role="document">
+      <button class="finance-image-modal__close" type="button" data-finance-modal-close aria-label="Cerrar imagen completa">×</button>
+      <p class="finance-image-modal__title" id="finance-modal-title">Vista completa</p>
+      <div class="finance-image-modal__frame" data-finance-modal-frame>
+        <span class="finance-image-modal__speaker" aria-hidden="true"></span>
+        <img class="finance-image-modal__image" data-finance-modal-image alt="Vista ampliada de la captura seleccionada" />
+        <span class="finance-image-modal__shine" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+  <script src="./js/main.js?v=mobile-clean-1" defer></script>
+</body>
 </html>
