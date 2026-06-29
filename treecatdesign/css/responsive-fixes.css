@@ -1,0 +1,49 @@
+/* Ajustes responsive para Hormigon */
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  .project, .project--finance, .finance-project-detail, .finance-project-detail-inner, .finance-case-chapter, .finance-app-value, .finance-smart-lab { overflow-x: clip; }
+
+  .finance-story-card--compact { gap: 18px; padding: 24px 18px; border-radius: 24px; }
+  .finance-story-card--compact h3, .finance-case-head h3, .finance-smart-intro h3, .finance-results.finance-case-close h3 { max-width: 100%; font-size: clamp(2rem, 10vw, 3.15rem); line-height: .98; letter-spacing: -.075em; }
+  .finance-story-mascot img { max-height: 280px; object-fit: contain; }
+
+  .finance-case-chapter, .finance-smart-lab { margin-top: 28px; padding: 20px 14px; border-radius: 24px; }
+  .finance-case-layout { grid-template-columns: 1fr; gap: 14px; }
+  .finance-case-rail { display: none; }
+  .finance-case-head p, .finance-smart-intro p { font-size: .96rem; line-height: 1.65; }
+
+  .finance-wireframe-grid, .finance-evolution-grid { display: flex; gap: 14px; margin-inline: -14px; padding: 4px 14px 18px; overflow-x: auto; overflow-y: visible; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .finance-wireframe-grid::-webkit-scrollbar, .finance-evolution-grid::-webkit-scrollbar { display: none; }
+  .finance-wireframe-card, .finance-evolution-card { flex: 0 0 min(82vw, 335px); scroll-snap-align: center; padding: 14px; border-radius: 22px; overflow: visible; }
+  .finance-wireframe-card h4, .finance-evolution-card h4 { margin-top: 12px; font-size: 1.05rem; line-height: 1.18; }
+  .finance-wireframe-card p, .finance-evolution-card p { margin-top: 8px; font-size: .88rem; line-height: 1.48; }
+  .finance-wireframe-thumb, .finance-evolution-thumb { display: grid; place-items: center; width: 100%; height: clamp(260px, 56vh, 390px); padding: 12px; border-radius: 18px; background: rgba(255,255,255,.9); overflow: hidden; }
+  .finance-evolution-thumb { height: clamp(300px, 62vh, 430px); }
+  .finance-wireframe-thumb img, .finance-evolution-thumb img { width: 100%; height: 100%; max-height: 100%; object-fit: contain; object-position: center top; transform: none !important; }
+
+  .finance-smart-showcase { grid-template-columns: 1fr; gap: 18px; }
+  .finance-smart-stage, .finance-smart-device-wrap { min-height: 0; }
+  .finance-smart-device-wrap { width: min(82vw, 310px); margin-inline: auto; }
+  .finance-smart-device { aspect-ratio: 390 / 780; max-height: 520px; overflow: hidden; }
+  .finance-smart-device img { height: 100%; object-fit: cover; object-position: top center; }
+  .finance-smart-floating-card { transform: scale(.86); }
+  .finance-smart-panel { width: 100%; min-width: 0; }
+  .finance-smart-controls { display: grid; gap: 10px; }
+
+  .finance-image-modal__content { width: min(92vw, 430px); max-height: calc(100dvh - 28px); padding: 54px 12px 14px; border-radius: 26px; }
+  .finance-image-modal__title { top: 18px; left: 58px; right: 58px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .finance-image-modal__close { top: 12px; right: 12px; width: 44px; height: 44px; z-index: 5; }
+  .finance-image-modal__frame { width: min(78vw, 330px); max-width: 100%; height: min(72dvh, 640px); max-height: calc(100dvh - 120px); margin-inline: auto; border-radius: 30px; overflow: hidden; }
+  .finance-image-modal__image { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+  .finance-project-close-scene { margin: 30px -14px 0; min-height: 0; padding: 0 0 18px; border-radius: 26px 26px 0 0; overflow: hidden; }
+  .finance-project-close-picture { height: clamp(340px, 58dvh, 500px); min-height: 0; }
+  .finance-project-close-picture img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+  .finance-project-close-actions { position: relative; inset: auto; margin: -78px auto 0; padding: 0 16px; }
+  .finance-project-close-btn { width: 100%; max-width: 360px; margin-inline: auto; box-shadow: 0 16px 36px rgba(14,165,233,.22); }
+}
+
+@media (min-width: 761px) {
+  .finance-wireframe-thumb, .finance-evolution-thumb { display: grid; place-items: center; height: 320px; padding: 14px; overflow: hidden; }
+  .finance-wireframe-thumb img, .finance-evolution-thumb img { width: 100%; height: 100%; object-fit: contain; object-position: center top; }
+}
