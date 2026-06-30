@@ -1,0 +1,1873 @@
+/* Mobile hard fixes for real phones */
+
+@media (max-width: 900px) {
+  html,
+  body,
+  .page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  *,
+  *::before,
+  *::after {
+    max-width: 100%;
+  }
+
+  .section {
+    width: 100%;
+    padding-inline: 16px !important;
+    overflow-x: hidden !important;
+  }
+
+  .container,
+  .project--finance .container,
+  .finance-project-detail,
+  .finance-project-detail-inner,
+  .finance-case-content,
+  .finance-smart-panel,
+  .finance-results,
+  .finance-case-close {
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+    margin-inline: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .hero-grid,
+  .split,
+  .finance-showcase,
+  .finance-case-layout,
+  .finance-story-card,
+  .finance-story-card--compact,
+  .finance-story-points,
+  .finance-feature-list,
+  .finance-research-methods,
+  .finance-insight-grid,
+  .finance-wireframe-grid,
+  .finance-evolution-grid,
+  .finance-feedback-grid,
+  .finance-outcome-strip,
+  .finance-learning-grid,
+  .finance-smart-lab,
+  .finance-smart-showcase,
+  .finance-smart-current,
+  .finance-smart-metrics,
+  .finance-functions-blocks,
+  .project-meta {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-columns: unset !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  .finance-case-rail {
+    display: none !important;
+  }
+
+  .finance-case-chapter,
+  .finance-smart-lab,
+  .finance-case-close.finance-results,
+  .finance-story-card--compact,
+  .finance-feedback-card,
+  .finance-outcome-card,
+  .finance-learning-card,
+  .finance-wireframe-card,
+  .finance-evolution-card,
+  .finance-function-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+  }
+
+  .finance-case-head h3,
+  .finance-smart-intro h3,
+  .finance-results.finance-case-close h3,
+  .finance-story-card--compact h3 {
+    max-width: 100% !important;
+    font-size: clamp(1.85rem, 10vw, 3rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -.07em !important;
+  }
+
+  .finance-case-head p,
+  .finance-smart-intro p,
+  .finance-story-copy p,
+  .finance-wireframe-card p,
+  .finance-evolution-card p,
+  .finance-feedback-card p,
+  .finance-outcome-card p,
+  .finance-learning-card p,
+  .project-desc,
+  .lead {
+    font-size: .96rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .finance-wireframe-thumb,
+  .finance-evolution-thumb,
+  .finance-detail-media,
+  .finance-screen-frame,
+  .mockup {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: clamp(230px, 52svh, 380px) !important;
+    padding: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .finance-wireframe-thumb img,
+  .finance-evolution-thumb img,
+  .finance-detail-media img,
+  .finance-screen-frame img,
+  .mockup img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    transform: none !important;
+  }
+
+  .finance-mascot-stage {
+    order: -1 !important;
+    min-height: clamp(330px, 68svh, 420px) !important;
+    overflow: visible !important;
+  }
+
+  .finance-mascot-peek {
+    right: 50% !important;
+    top: auto !important;
+    bottom: 0 !important;
+    width: min(78vw, 310px) !important;
+    translate: 50% 0 !important;
+    transform: translate3d(0, 0, 0) scale(.96) rotate(1deg) !important;
+  }
+
+  .hero-actions,
+  .finance-cta-actions,
+  .finance-smart-controls {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .btn,
+  .finance-cta-actions .btn,
+  .finance-smart-control,
+  .finance-project-close-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .finance-project-close-scene {
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 30px 0 0 !important;
+    padding: 0 0 max(18px, env(safe-area-inset-bottom)) !important;
+    border-radius: 26px 26px 0 0 !important;
+    overflow: hidden !important;
+    background: #dff7ff !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .finance-project-close-picture img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
+
+  .finance-project-close-actions {
+    position: relative !important;
+    inset: auto !important;
+    margin: -78px auto 0 !important;
+    padding: 0 16px !important;
+    z-index: 2 !important;
+  }
+
+  .finance-image-modal__content {
+    width: min(92vw, 430px) !important;
+    max-height: calc(100svh - 24px) !important;
+    padding: 54px 12px 14px !important;
+  }
+
+  .finance-image-modal__frame,
+  .finance-image-modal__frame.is-phone-frame {
+    width: min(78vw, 330px) !important;
+    height: min(72svh, 640px) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none !important;
+  }
+
+  .hero {
+    padding-top: 42px !important;
+  }
+
+  .section {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  .finance-case-chapter,
+  .finance-smart-lab,
+  .finance-case-close.finance-results,
+  .finance-story-card--compact {
+    margin-top: 24px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .finance-mascot-stage {
+    min-height: 315px !important;
+  }
+
+  .finance-wireframe-thumb,
+  .finance-evolution-thumb,
+  .finance-detail-media,
+  .finance-screen-frame,
+  .mockup {
+    height: clamp(210px, 48svh, 330px) !important;
+  }
+}
+
+/* Evolución visual: mobile limpio sin carrusel ni scroll interno */
+@media (max-width: 900px) {
+  .finance-case-evolution,
+  .finance-case-evolution .finance-case-content {
+    overflow: visible !important;
+  }
+
+  .finance-case-evolution .finance-case-head h3 {
+    max-width: 100% !important;
+    font-size: clamp(1.75rem, 9vw, 2.35rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.065em !important;
+  }
+
+  .finance-case-evolution .finance-case-head p {
+    font-size: .96rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .finance-case-evolution .finance-evolution-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: unset !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 18px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card {
+    display: grid !important;
+    grid-template-columns: minmax(104px, 38%) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 14px !important;
+    row-gap: 0 !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px !important;
+    border-radius: 20px !important;
+    overflow: visible !important;
+    scroll-snap-align: none !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card::after {
+    display: none !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: stretch !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: none !important;
+    padding: 10px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    touch-action: manipulation !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    transform: none !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card h4 {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+    margin: 0 !important;
+    font-size: clamp(.95rem, 4vw, 1.05rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.04em !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+    margin: 6px 0 0 !important;
+    font-size: .78rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .finance-case-evolution .finance-evolution-card {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+    padding: 10px !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb {
+    height: 164px !important;
+    min-height: 164px !important;
+    padding: 8px !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card p {
+    font-size: .74rem !important;
+    line-height: 1.34 !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .finance-case-evolution .finance-evolution-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb,
+  .finance-case-evolution .finance-evolution-card h4,
+  .finance-case-evolution .finance-evolution-card p {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb {
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+}
+
+
+/* Fix mobile: evitar scroll interno en secciones y tarjetas */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .section,
+  .project--finance,
+  .project--finance .container,
+  .finance-project-detail,
+  .finance-project-detail-inner,
+  .finance-story-card,
+  .finance-story-card--compact,
+  .finance-case-chapter,
+  .finance-case-layout,
+  .finance-case-content,
+  .finance-research-methods,
+  .finance-insight-board,
+  .finance-insight-grid,
+  .finance-wireframe-grid,
+  .finance-evolution-grid,
+  .finance-feedback-grid,
+  .finance-outcome-strip,
+  .finance-learning-grid,
+  .finance-smart-lab,
+  .finance-smart-showcase,
+  .finance-functions-blocks,
+  .finance-case-close,
+  .finance-results {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    -webkit-overflow-scrolling: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  .finance-method-card,
+  .finance-insight-card,
+  .finance-wireframe-card,
+  .finance-evolution-card,
+  .finance-feedback-card,
+  .finance-outcome-card,
+  .finance-learning-card,
+  .finance-problem-compact,
+  .finance-how-might-we,
+  .finance-decision-impact,
+  .finance-product-decision-card {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .case-flow {
+    display: grid !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: unset !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    scroll-snap-type: none !important;
+    padding: 0 !important;
+    touch-action: pan-y !important;
+  }
+
+  .case-flow > *,
+  .case-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    scroll-snap-align: none !important;
+  }
+
+  .finance-wireframe-thumb,
+  .finance-evolution-thumb,
+  .finance-detail-media,
+  .finance-screen-frame,
+  .mockup,
+  .finance-function-media,
+  .finance-login-preview,
+  .finance-image-modal,
+  .finance-image-modal__content,
+  .finance-image-modal__frame {
+    overscroll-behavior: contain !important;
+  }
+}
+
+/* Fix mobile: cierre de Hormigon y Solución final sin desplazamientos ni blur */
+@media (max-width: 900px) {
+  .project--finance {
+    padding-bottom: 0 !important;
+  }
+
+  .finance-project-close-scene {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 28px 0 0 !important;
+    padding: 0 !important;
+    border-radius: 24px 24px 0 0 !important;
+    overflow: hidden !important;
+    background: #dff7ff !important;
+  }
+
+  .finance-project-close-scene::before {
+    display: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    inset: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: clamp(-62px, -13vw, -44px) auto 0 !important;
+    padding: 0 16px 18px !important;
+    transform: none !important;
+    z-index: 2 !important;
+  }
+
+  .finance-project-close-btn {
+    width: min(100%, 230px) !important;
+    min-width: 0 !important;
+    max-width: 230px !important;
+    margin-inline: auto !important;
+    white-space: nowrap !important;
+  }
+
+  .finance-smart-stage {
+    min-height: auto !important;
+    padding: 8px 0 4px !important;
+    overflow: visible !important;
+  }
+
+  .finance-smart-device-wrap {
+    width: min(68vw, 230px) !important;
+    max-width: 230px !important;
+    perspective: none !important;
+  }
+
+  .finance-smart-device,
+  .finance-smart-device:hover,
+  .finance-smart-device:focus-visible {
+    transform: none !important;
+    transition: box-shadow .24s ease !important;
+  }
+
+  .finance-smart-device img,
+  .finance-smart-device.is-switching img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .finance-smart-device-wrap {
+    width: min(64vw, 210px) !important;
+  }
+
+  .finance-project-close-actions {
+    margin-top: -44px !important;
+  }
+}
+
+/* Ajuste final móvil: cierre de Hormigon y legibilidad de Evolución visual */
+@media (max-width: 900px) {
+  .finance-case-evolution .finance-evolution-card {
+    background: rgba(255, 255, 255, .94) !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card h4,
+  .finance-case-evolution .finance-evolution-card p {
+    position: relative !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card h4 {
+    color: #071326 !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card p {
+    color: #334155 !important;
+  }
+
+  .finance-project-close-scene {
+    position: relative !important;
+    display: block !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: clamp(220px, 62vw, 280px) !important;
+    min-height: clamp(220px, 62vw, 280px) !important;
+    margin: 30px calc(50% - 50vw) 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background: #dff7ff !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(16px, 5vw, 24px) !important;
+    inset: auto auto clamp(16px, 5vw, 24px) 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: min(calc(100% - 72px), 240px) !important;
+    max-width: 240px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 3 !important;
+  }
+
+  .finance-project-close-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 240px !important;
+    min-height: 48px !important;
+    margin: 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Fix final móvil estable: tarjetas legibles, solución final nítida y cierre como final del proyecto */
+@media (max-width: 900px) {
+  /* Evita que miniaturas grandes invadan o tapen títulos/descripciones */
+  .finance-wireframe-card,
+  .finance-case-evolution .finance-evolution-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 14px !important;
+    overflow: visible !important;
+    background: rgba(255, 255, 255, .94) !important;
+  }
+
+  .finance-wireframe-thumb {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: clamp(250px, 70vw, 350px) !important;
+    min-height: clamp(250px, 70vw, 350px) !important;
+    max-height: none !important;
+    margin: 0 0 6px !important;
+    padding: 12px !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+  }
+
+  .finance-wireframe-thumb img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .finance-wireframe-card h4,
+  .finance-case-evolution .finance-evolution-card h4,
+  .finance-wireframe-card p,
+  .finance-case-evolution .finance-evolution-card p {
+    position: relative !important;
+    z-index: 5 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  .finance-wireframe-card h4,
+  .finance-case-evolution .finance-evolution-card h4 {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #071326 !important;
+    font-size: clamp(1rem, 4.3vw, 1.12rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .finance-wireframe-card p,
+  .finance-case-evolution .finance-evolution-card p {
+    margin: -2px 0 0 !important;
+    color: #334155 !important;
+    font-size: .9rem !important;
+    line-height: 1.42 !important;
+  }
+
+  /* En Evolución visual se mantiene el formato compacto lateral que ya había gustado */
+  .finance-case-evolution .finance-evolution-card {
+    display: grid !important;
+    grid-template-columns: minmax(108px, 38%) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 14px !important;
+    row-gap: 6px !important;
+    align-items: center !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    width: 100% !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    margin: 0 !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card h4 {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+  }
+
+  /* Solución final: sin blur, sin overlays y sin transforms que suavizan la captura en móvil */
+  .finance-smart-lab,
+  .finance-smart-showcase,
+  .finance-smart-stage,
+  .finance-smart-device-wrap,
+  .finance-smart-device,
+  .finance-smart-device img {
+    transform: none !important;
+    filter: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+  }
+
+  .finance-smart-stage::before,
+  .finance-smart-orbit,
+  .finance-phone-shine {
+    display: none !important;
+  }
+
+  .finance-smart-stage {
+    min-height: auto !important;
+    padding: 6px 0 0 !important;
+    overflow: visible !important;
+  }
+
+  .finance-smart-device-wrap {
+    width: min(74vw, 260px) !important;
+    max-width: 260px !important;
+    perspective: none !important;
+  }
+
+  .finance-smart-device,
+  .finance-smart-device:hover,
+  .finance-smart-device:focus-visible {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 8px !important;
+    border-radius: 30px !important;
+    transform: none !important;
+    transition: box-shadow .24s ease !important;
+  }
+
+  .finance-smart-device img,
+  .finance-smart-device.is-switching img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    image-rendering: auto !important;
+  }
+
+  .finance-phone-speaker {
+    display: none !important;
+  }
+
+  /* Cierre: la imagen ocupa la pantalla final del proyecto y el botón queda dentro de la tierra */
+  .finance-project-close-scene {
+    position: relative !important;
+    display: block !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: 100svh !important;
+    min-height: 560px !important;
+    max-height: none !important;
+    margin: 32px calc(50% - 50vw) 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background: #dff7ff !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(76px, 14svh, 132px) !important;
+    inset: auto auto clamp(76px, 14svh, 132px) 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: min(calc(100% - 76px), 270px) !important;
+    max-width: 270px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 4 !important;
+  }
+
+  .finance-project-close-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 270px !important;
+    min-height: 52px !important;
+    margin: 0 auto !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #075985, #0284c7) !important;
+    color: #f0fbff !important;
+    box-shadow: 0 16px 34px rgba(2, 6, 23, .22) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .finance-wireframe-thumb {
+    height: clamp(235px, 68vw, 320px) !important;
+    min-height: clamp(235px, 68vw, 320px) !important;
+  }
+
+  .finance-case-evolution .finance-evolution-card {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+  }
+
+  .finance-case-evolution .finance-evolution-thumb {
+    height: 164px !important;
+    min-height: 164px !important;
+  }
+
+  .finance-smart-device-wrap {
+    width: min(72vw, 238px) !important;
+  }
+}
+
+/* Ajuste final móvil: nitidez en Módulos clave y cierre más compacto */
+@media (max-width: 900px) {
+  .finance-smart-lab,
+  .finance-smart-lab.reveal,
+  .finance-smart-lab.reveal.is-visible,
+  .finance-smart-showcase,
+  .finance-smart-panel,
+  .finance-smart-panel-head,
+  .finance-smart-controls,
+  .finance-smart-control,
+  .finance-smart-control:hover,
+  .finance-smart-control:focus-visible,
+  .finance-smart-control.is-active,
+  .finance-smart-control span,
+  .finance-smart-control strong,
+  .finance-smart-control small,
+  .finance-smart-control-copy {
+    transform: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: geometricPrecision !important;
+  }
+
+  .finance-smart-panel,
+  .finance-smart-control {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .finance-smart-panel {
+    overflow: visible !important;
+    background: rgba(255, 255, 255, .96) !important;
+    box-shadow: 0 16px 38px rgba(14, 165, 233, .10) !important;
+  }
+
+  .finance-smart-panel::before,
+  .finance-smart-control::before {
+    display: none !important;
+  }
+
+  .finance-smart-control {
+    background: rgba(255, 255, 255, .96) !important;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease !important;
+  }
+
+  .finance-smart-control.is-active {
+    background: rgba(232, 251, 255, .98) !important;
+    border-color: rgba(14, 165, 233, .26) !important;
+    box-shadow: 0 12px 28px rgba(14, 165, 233, .10) !important;
+  }
+
+  .finance-smart-panel-head span,
+  .finance-smart-control strong {
+    color: #071326 !important;
+    opacity: 1 !important;
+  }
+
+  .finance-smart-control small,
+  .finance-smart-control-copy {
+    color: #475569 !important;
+    opacity: 1 !important;
+  }
+
+  .finance-project-close-scene {
+    width: 100vw !important;
+    max-width: none !important;
+    height: clamp(300px, 76vw, 410px) !important;
+    min-height: clamp(300px, 76vw, 410px) !important;
+    max-height: 410px !important;
+    margin: 30px calc(50% - 50vw) 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background: linear-gradient(180deg, #dff7ff 0%, #dff7ff 100%) !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: absolute !important;
+    inset: auto 0 0 0 !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .finance-project-close-picture img {
+    display: block !important;
+    width: min(100vw, 520px) !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(22px, 7vw, 34px) !important;
+    inset: auto auto clamp(22px, 7vw, 34px) 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: min(calc(100% - 118px), 230px) !important;
+    max-width: 230px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 4 !important;
+  }
+
+  .finance-project-close-btn {
+    min-height: 46px !important;
+    max-width: 230px !important;
+    font-size: .92rem !important;
+  }
+}
+
+/* Fix puntual móvil: quitar sombra del cierre y conservar scroll normal */
+@media (max-width: 900px) {
+  html,
+  body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .page,
+  main {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .finance-project-close-scene,
+  .finance-project-close-picture,
+  .finance-project-close-picture img {
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-scene::before,
+  .finance-project-close-scene::after,
+  .finance-project-close-picture::before,
+  .finance-project-close-picture::after {
+    content: none !important;
+    display: none !important;
+    background: transparent !important;
+    opacity: 0 !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .finance-project-close-btn {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Ajuste puntual móvil: cierre final de Hormigón estable, sin franja extra y sin empujar el siguiente proyecto */
+@media (max-width: 900px) {
+  .finance-project-close-scene {
+    position: relative !important;
+    display: block !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 1672 / 846 !important;
+    margin: 30px calc(50% - 50vw) 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background: #dff7ff !important;
+    box-shadow: none !important;
+    transform: none !important;
+    isolation: isolate !important;
+  }
+
+  .finance-project-close-scene::before,
+  .finance-project-close-scene::after,
+  .finance-project-close-picture::before,
+  .finance-project-close-picture::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .finance-project-close-picture {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: clamp(18px, 6vw, 30px) !important;
+    inset: auto auto clamp(18px, 6vw, 30px) 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: min(calc(100% - 72px), 260px) !important;
+    max-width: 260px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 4 !important;
+  }
+
+  .finance-project-close-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+    min-height: 46px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Fix definitivo: el cierre de Hormigon termina con la mascota, sin sombra ni arrastre del siguiente proyecto */
+.finance-project-close-scene {
+  position: relative !important;
+  display: block !important;
+  width: 100vw !important;
+  max-width: none !important;
+  height: clamp(520px, 72svh, 820px) !important;
+  min-height: 520px !important;
+  max-height: none !important;
+  margin: clamp(34px, 6vw, 72px) calc(50% - 50vw) 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  background: #dff7ff !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  isolation: isolate !important;
+}
+
+.finance-project-close-scene::before,
+.finance-project-close-scene::after,
+.finance-project-close-picture::before,
+.finance-project-close-picture::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  opacity: 0 !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.finance-project-close-picture {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.finance-project-close-picture img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center bottom !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.finance-project-close-actions {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: clamp(42px, 8svh, 88px) !important;
+  inset: auto auto clamp(42px, 8svh, 88px) 50% !important;
+  z-index: 3 !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: min(calc(100% - 72px), 320px) !important;
+  max-width: 320px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translateX(-50%) !important;
+}
+
+.finance-project-close-btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 320px !important;
+  min-height: 50px !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  color: #f0fbff !important;
+  background: linear-gradient(135deg, #075985, #0284c7) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+@media (max-width: 900px) {
+  .finance-project-close-scene {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: none !important;
+    margin: 30px calc(50% - 50vw) 0 !important;
+  }
+
+  .finance-project-close-actions {
+    bottom: clamp(44px, 10svh, 96px) !important;
+    inset: auto auto clamp(44px, 10svh, 96px) 50% !important;
+    width: min(calc(100% - 88px), 292px) !important;
+    max-width: 292px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .finance-project-close-picture img {
+    object-position: center bottom !important;
+  }
+
+  .finance-project-close-actions {
+    width: min(calc(100% - 72px), 270px) !important;
+    max-width: 270px !important;
+  }
+}
+
+
+/* Correcciones finales móvil: inicio y cierre de Hormigon */
+@media (max-width: 900px) {
+  #hormigon {
+    scroll-margin-top: 84px !important;
+  }
+
+  .project--finance,
+  .project--finance .container,
+  .finance-showcase {
+    overflow: hidden !important;
+  }
+
+  .finance-showcase {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    min-height: auto !important;
+    margin-bottom: 24px !important;
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .finance-showcase-copy {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .finance-mascot-stage {
+    order: -1 !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    min-height: clamp(280px, 56svh, 380px) !important;
+    margin: 0 0 12px !important;
+    overflow: hidden !important;
+    contain: none !important;
+    border-radius: 28px !important;
+  }
+
+  .finance-mascot-peek {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    translate: none !important;
+    width: min(74vw, 300px) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .finance-mascot-stage.is-visible .finance-mascot-peek {
+    animation: none !important;
+  }
+
+  .finance-mascot-float {
+    width: 100% !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .finance-project-close-scene {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: clamp(360px, 96vw, 430px) !important;
+    min-height: clamp(360px, 96vw, 430px) !important;
+    max-height: clamp(360px, 96vw, 430px) !important;
+    margin: 28px 0 0 !important;
+    padding: 0 !important;
+    border-radius: 26px 26px 0 0 !important;
+    background: #dff7ff !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .finance-project-close-picture img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
+
+  .finance-project-close-actions {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 22px !important;
+    inset: auto auto 22px 50% !important;
+    width: calc(100% - 32px) !important;
+    max-width: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 2 !important;
+  }
+
+  .finance-project-close-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Ajuste puntual: cierre de Hormigon a lo ancho completo en celular */
+@media (max-width: 560px) {
+  #hormigon.project--finance > .container,
+  #hormigon .finance-project-detail,
+  #hormigon .finance-project-detail-inner {
+    max-width: none !important;
+    overflow-x: visible !important;
+  }
+
+  #hormigon.project--finance {
+    overflow-x: hidden !important;
+  }
+
+  #hormigon .finance-project-close-scene {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-right: calc(50% - 50vw) !important;
+    margin-left: calc(50% - 50vw) !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Fix real: el cierre de Hormigon se sale del contenedor móvil y cubre todo el ancho visible */
+@media (max-width: 560px) {
+  #hormigon.project--finance > .container,
+  #hormigon .finance-project-detail,
+  #hormigon .finance-project-detail-inner {
+    overflow: visible !important;
+    max-width: none !important;
+  }
+
+  #hormigon .finance-project-close-scene {
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-top: 28px !important;
+    margin-right: -50vw !important;
+    margin-left: -50vw !important;
+    border-radius: 0 !important;
+  }
+
+  #hormigon .finance-project-close-picture,
+  #hormigon .finance-project-close-picture img {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Navbar móvil con hamburguesa: visible, se oculta al bajar y aparece al subir */
+.nav-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: flex !important;
+    top: max(10px, env(safe-area-inset-top)) !important;
+    left: 50% !important;
+    width: min(calc(100% - 24px), 460px) !important;
+    max-width: min(calc(100% - 24px), 460px) !important;
+    min-height: 62px !important;
+    padding: 10px 10px 10px 12px !important;
+    border-radius: 30px !important;
+    overflow: visible !important;
+  }
+
+  .nav.nav-hidden {
+    transform: translate(-50%, calc(-100% - 28px)) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .brand {
+    min-width: 0 !important;
+    max-width: calc(100% - 54px) !important;
+  }
+
+  .brand span:last-child {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .nav-menu-toggle {
+    display: inline-flex !important;
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    flex-direction: column !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.08) !important;
+    color: var(--text) !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .nav-menu-toggle span {
+    display: block !important;
+    width: 18px !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: currentColor !important;
+    transform-origin: center !important;
+    transition: transform .22s ease, opacity .22s ease !important;
+  }
+
+  .nav.nav-menu-open .nav-menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+
+  .nav.nav-menu-open .nav-menu-toggle span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .nav.nav-menu-open .nav-menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .nav-links {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 24px !important;
+    background: rgba(7, 7, 7, .86) !important;
+    backdrop-filter: blur(18px) !important;
+    box-shadow: 0 20px 45px rgba(0,0,0,.28) !important;
+    overflow: hidden !important;
+  }
+
+  .nav.nav-menu-open .nav-links {
+    display: grid !important;
+  }
+
+  .nav-links a {
+    width: 100% !important;
+    padding: 13px 15px !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.06) !important;
+    color: var(--text) !important;
+    font-size: .96rem !important;
+  }
+
+  .nav-links a:active,
+  .nav-links a:hover {
+    background: rgba(255,255,255,.12) !important;
+  }
+
+  .hero {
+    padding-top: 110px !important;
+  }
+}
+
+
+/* Ajustes de contenido solicitados: links reales, contacto, demo y pantallas finales */
+.is-hidden-until-ready,
+.is-hidden-until-video,
+.is-hidden-until-assets,
+[hidden] {
+  display: none !important;
+}
+
+.finance-ui-decisions {
+  margin-top: clamp(22px, 3vw, 34px);
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgba(14, 165, 233, .18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(14, 165, 233, .14), transparent 30%),
+    rgba(255, 255, 255, .72);
+  box-shadow: 0 18px 48px rgba(14, 165, 233, .10);
+}
+
+.finance-ui-decisions-head {
+  display: grid;
+  gap: 8px;
+  max-width: 720px;
+}
+
+.finance-ui-decisions-head span,
+.finance-final-video-head span,
+.finance-final-gallery-head span {
+  color: var(--finance-accent-deep);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.finance-ui-decisions-head h4,
+.finance-final-video-head h4,
+.finance-final-gallery-head h4 {
+  margin: 0;
+  color: var(--finance-text);
+  font-size: clamp(1.28rem, 2vw, 1.85rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.finance-ui-decision-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.finance-ui-decision-list li {
+  position: relative;
+  padding: 14px 14px 14px 36px;
+  border: 1px solid rgba(14, 165, 233, .13);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .66);
+  color: var(--finance-muted);
+  font-size: .92rem;
+  line-height: 1.52;
+}
+
+.finance-ui-decision-list li::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--finance-accent-deep);
+  box-shadow: 0 0 0 5px rgba(14, 165, 233, .12);
+}
+
+.finance-ui-decision-list strong {
+  color: var(--finance-text);
+}
+
+.finance-final-video,
+.finance-final-gallery {
+  margin-top: clamp(28px, 4vw, 46px);
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgba(14, 165, 233, .18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, .14), transparent 28%),
+    rgba(255, 255, 255, .72);
+  box-shadow: 0 18px 48px rgba(14, 165, 233, .10);
+}
+
+.finance-final-video-head,
+.finance-final-gallery-head {
+  display: grid;
+  gap: 8px;
+  max-width: 720px;
+}
+
+.finance-final-video-head p {
+  margin: 0;
+  color: var(--finance-muted);
+  line-height: 1.62;
+}
+
+.finance-final-video-frame {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  width: min(100%, 920px);
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, .16);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, .12), rgba(255, 255, 255, .72)),
+    #fff;
+}
+
+.finance-final-video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.finance-final-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.finance-final-screen-card {
+  position: relative;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid rgba(14, 165, 233, .18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .76);
+  box-shadow: 0 18px 48px rgba(14, 165, 233, .10);
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+.finance-final-screen-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(14, 165, 233, .32);
+  box-shadow: 0 22px 54px rgba(14, 165, 233, .13);
+}
+
+.finance-final-screen-thumb {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(190px, 24vw, 320px);
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, .14);
+  border-radius: 18px;
+  background: rgba(224, 242, 254, .66);
+  cursor: zoom-in;
+}
+
+.finance-final-screen-thumb img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.finance-final-screen-card h5 {
+  margin: 12px 0 0;
+  color: var(--finance-text);
+  font-size: 1rem;
+  line-height: 1.16;
+  letter-spacing: -.035em;
+}
+
+.finance-final-screen-card p {
+  margin: 7px 0 0;
+  color: var(--finance-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .finance-ui-decision-list,
+  .finance-final-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .finance-ui-decisions,
+  .finance-final-video,
+  .finance-final-gallery {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .finance-ui-decision-list,
+  .finance-final-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-final-video-frame {
+    border-radius: 18px;
+  }
+
+  .finance-final-screen-thumb {
+    height: 240px;
+  }
+
+  .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Ajuste solo web: el cierre de Hormigon conserva la proporción completa de la imagen
+   para que no se corte ni deje una franja vacía antes de la siguiente sección. */
+@media (min-width: 901px) {
+  #hormigon .finance-project-close-scene {
+    aspect-ratio: 1672 / 846 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-bottom: 0 !important;
+  }
+
+  #hormigon .finance-project-close-picture,
+  #hormigon .finance-project-close-picture img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  #hormigon .finance-project-close-picture img {
+    object-fit: cover !important;
+    object-position: center bottom !important;
+  }
+}
+
+/* Ajuste solo web: el cierre de Hormigon queda pegado al final del proyecto,
+   sin la franja vacía que dejaba el padding inferior de la sección. */
+@media (min-width: 901px) {
+  #hormigon.project--finance {
+    padding-bottom: 0 !important;
+  }
+
+  #hormigon .finance-project-close-scene {
+    margin-bottom: 0 !important;
+  }
+}
