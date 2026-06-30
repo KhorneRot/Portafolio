@@ -321,14 +321,12 @@ const openFinanceImageModal = (trigger) => {
   if (!imageSrc) return;
 
   const shouldShowPhoneFrame = trigger.classList.contains("finance-smart-device") || trigger.dataset.modalFrame === "phone";
-  const shouldUseWireframeModal = trigger.classList.contains("finance-wireframe-thumb");
 
   financeLastFocusedElement = document.activeElement;
   financeImageModalImage.src = imageSrc;
   financeImageModalImage.alt = image?.getAttribute("alt") || imageTitle;
   financeImageModalTitle.textContent = imageTitle;
   financeImageModal.classList.toggle("finance-image-modal--phone-frame", shouldShowPhoneFrame);
-  financeImageModal.classList.toggle("finance-image-modal--wireframe", shouldUseWireframeModal);
   financeImageModalFrame?.classList.toggle("is-phone-frame", shouldShowPhoneFrame);
   financeImageModal.classList.add("is-open");
   financeImageModal.setAttribute("aria-hidden", "false");
@@ -347,7 +345,7 @@ const openFinanceImageModal = (trigger) => {
 const closeFinanceImageModal = () => {
   if (!financeImageModal || !financeImageModalImage) return;
 
-  financeImageModal.classList.remove("is-open", "finance-image-modal--phone-frame", "finance-image-modal--wireframe");
+  financeImageModal.classList.remove("is-open", "finance-image-modal--phone-frame");
   financeImageModalFrame?.classList.remove("is-phone-frame");
   financeImageModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("finance-modal-open");

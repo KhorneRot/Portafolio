@@ -1872,70 +1872,101 @@
   }
 }
 
-
-/* Corrección mobile: wireframes grandes en tarjeta y vista completa sin recorte.
-   En celulares reales el navegador/WhatsApp reduce el alto útil; estas reglas evitan
-   que las capturas verticales se hagan miniatura o se corten dentro del modal. */
-@media (max-width: 700px) {
-  .finance-wireframe-thumb {
-    height: clamp(250px, 70vw, 350px) !important;
-    min-height: clamp(250px, 70vw, 350px) !important;
+/* Corrección móvil: wireframes completos y modal sin corte inferior.
+   Solo aplica en celular/tablet; web conserva el comportamiento original. */
+@media (max-width: 900px) {
+  #hormigon .finance-wireframe-thumb {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 390 / 844 !important;
+    margin: 0 0 8px !important;
+    padding: 12px !important;
     overflow: hidden !important;
+    border-radius: 18px !important;
   }
 
-  .finance-wireframe-thumb img {
+  #hormigon .finance-wireframe-thumb img {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
-    max-width: none !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    object-position: top center !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    transform: none !important;
+    filter: none !important;
   }
 
-  .finance-image-modal.finance-image-modal--wireframe {
-    align-items: stretch !important;
-    justify-items: center !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+  #hormigon .finance-image-modal {
+    align-items: center !important;
     padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom)) !important;
   }
 
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__content {
-    align-self: start !important;
-    display: block !important;
-    width: min(94vw, 430px) !important;
-    max-height: none !important;
-    min-height: auto !important;
-    margin: 0 auto !important;
-    padding: 58px 12px 14px !important;
-    overflow: visible !important;
+  #hormigon .finance-image-modal--phone-frame .finance-image-modal__content,
+  .finance-image-modal--phone-frame .finance-image-modal__content {
+    width: min(96vw, 430px) !important;
+    max-height: calc(100svh - max(20px, env(safe-area-inset-top) + env(safe-area-inset-bottom))) !important;
+    padding: 54px 12px 14px !important;
+    overflow: hidden !important;
+    grid-template-rows: auto minmax(0, 1fr) !important;
+    justify-items: center !important;
   }
 
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__title {
-    margin-bottom: 12px !important;
-  }
-
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame {
+  #hormigon .finance-image-modal__frame.is-phone-frame,
+  .finance-image-modal__frame.is-phone-frame {
     width: 100% !important;
+    max-width: min(82vw, 330px) !important;
     height: auto !important;
-    max-height: none !important;
+    max-height: calc(100svh - 122px) !important;
     aspect-ratio: auto !important;
-    overflow: visible !important;
     padding: 8px !important;
+    overflow: hidden !important;
     border-radius: 34px !important;
   }
 
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__image {
-    width: 100% !important;
+  #hormigon .finance-image-modal__frame.is-phone-frame .finance-image-modal__image,
+  .finance-image-modal__frame.is-phone-frame .finance-image-modal__image {
+    display: block !important;
+    width: auto !important;
     height: auto !important;
-    max-height: none !important;
+    max-width: 100% !important;
+    max-height: calc(100svh - 142px) !important;
     object-fit: contain !important;
-    object-position: top center !important;
+    object-position: center !important;
     border-radius: 26px !important;
   }
 
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__speaker,
-  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__shine {
-    display: none !important;
+  #hormigon .finance-image-modal__frame.is-phone-frame .finance-image-modal__shine,
+  .finance-image-modal__frame.is-phone-frame .finance-image-modal__shine {
+    inset: 8px !important;
+    border-radius: 26px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  #hormigon .finance-wireframe-thumb {
+    aspect-ratio: 390 / 844 !important;
+  }
+
+  #hormigon .finance-image-modal__frame.is-phone-frame,
+  .finance-image-modal__frame.is-phone-frame {
+    max-width: min(84vw, 310px) !important;
+    max-height: calc(100svh - 118px) !important;
+  }
+
+  #hormigon .finance-image-modal__frame.is-phone-frame .finance-image-modal__image,
+  .finance-image-modal__frame.is-phone-frame .finance-image-modal__image {
+    max-height: calc(100svh - 138px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .finance-image-modal {
+    align-items: center !important;
+    padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom)) !important;
   }
 }
