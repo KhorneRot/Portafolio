@@ -1871,3 +1871,71 @@
     margin-bottom: 0 !important;
   }
 }
+
+
+/* Corrección mobile: wireframes grandes en tarjeta y vista completa sin recorte.
+   En celulares reales el navegador/WhatsApp reduce el alto útil; estas reglas evitan
+   que las capturas verticales se hagan miniatura o se corten dentro del modal. */
+@media (max-width: 700px) {
+  .finance-wireframe-thumb {
+    height: clamp(250px, 70vw, 350px) !important;
+    min-height: clamp(250px, 70vw, 350px) !important;
+    overflow: hidden !important;
+  }
+
+  .finance-wireframe-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe {
+    align-items: stretch !important;
+    justify-items: center !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom)) !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__content {
+    align-self: start !important;
+    display: block !important;
+    width: min(94vw, 430px) !important;
+    max-height: none !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 58px 12px 14px !important;
+    overflow: visible !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__title {
+    margin-bottom: 12px !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    padding: 8px !important;
+    border-radius: 34px !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    border-radius: 26px !important;
+  }
+
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__speaker,
+  .finance-image-modal.finance-image-modal--wireframe .finance-image-modal__frame.is-phone-frame .finance-image-modal__shine {
+    display: none !important;
+  }
+}
