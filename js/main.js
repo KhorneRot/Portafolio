@@ -60,6 +60,60 @@ revealElements.forEach((element) => {
   revealObserver.observe(element);
 });
 
+const heroCard = document.querySelector("[data-hero-card]");
+const heroTitle = document.querySelector("[data-hero-title]");
+const heroMotionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const heroTreecatTitle = `Treecat<span>Design</span>`;
+const heroPersonalTitle = `Hola, mi nombre es<span>Alejandro Ramírez</span>`;
+let heroIsPersonal = false;
+let heroIntroTimer = null;
+let heroTitleTimer = null;
+
+const setHeroPresentation = (showPersonal, animateText = true) => {
+  if (!heroCard || !heroTitle) return;
+
+  window.clearTimeout(heroTitleTimer);
+  heroIsPersonal = showPersonal;
+  heroCard.classList.toggle("is-personal", showPersonal);
+  heroCard.setAttribute("aria-pressed", String(showPersonal));
+  heroCard.setAttribute(
+    "aria-label",
+    showPersonal ? "Mostrar logo de treecatdesign" : "Mostrar foto de Alejandro Ramírez"
+  );
+
+  const nextTitle = showPersonal ? heroPersonalTitle : heroTreecatTitle;
+
+  if (!animateText || heroMotionReduced) {
+    heroTitle.classList.remove("is-switching");
+    heroTitle.classList.toggle("is-personal", showPersonal);
+    heroTitle.innerHTML = nextTitle;
+    return;
+  }
+
+  heroTitle.classList.add("is-switching");
+
+  heroTitleTimer = window.setTimeout(() => {
+    heroTitle.classList.toggle("is-personal", showPersonal);
+    heroTitle.innerHTML = nextTitle;
+    window.requestAnimationFrame(() => {
+      heroTitle.classList.remove("is-switching");
+    });
+  }, 260);
+};
+
+if (heroCard && heroTitle) {
+  heroCard.setAttribute("aria-pressed", "false");
+
+  heroIntroTimer = window.setTimeout(() => {
+    setHeroPresentation(true);
+  }, 3000);
+
+  heroCard.addEventListener("click", () => {
+    window.clearTimeout(heroIntroTimer);
+    setHeroPresentation(!heroIsPersonal);
+  });
+}
+
 const financeProjectToggle = document.querySelector("[data-finance-toggle]");
 const financeProjectDetail = document.querySelector("#hormigon-completo");
 const financeProjectCloseButtons = document.querySelectorAll("[data-finance-close]");

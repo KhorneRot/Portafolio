@@ -292,6 +292,78 @@ h1 {
   background: #fff;
 }
 
+.hero-flip-card {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.16);
+  color: inherit;
+  cursor: pointer;
+  perspective: 1200px;
+}
+
+.hero-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transition: transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-logo-wrap.is-personal .hero-card-inner {
+  transform: rotateY(180deg);
+}
+
+.hero-card-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-card-face--back {
+  transform: rotateY(180deg);
+}
+
+.hero-card-face .hero-logo {
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    filter .35s ease;
+}
+
+.hero-logo--profile {
+  object-position: center center;
+}
+
+.hero-flip-card:hover .hero-card-face .hero-logo,
+.hero-flip-card:focus-visible .hero-card-face .hero-logo {
+  transform: scale(1.018) rotateZ(-1.5deg);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.hero-title {
+  transition:
+    opacity .32s ease,
+    transform .32s ease,
+    filter .32s ease;
+}
+
+.hero-title.is-personal {
+  font-size: clamp(2.65rem, 6.8vw, 6.35rem);
+  line-height: .94;
+  letter-spacing: -0.078em;
+}
+
+.hero-title.is-switching,
+.hero-title.reveal.is-visible.is-switching {
+  opacity: 0;
+  transform: translateY(14px) scale(.985);
+  filter: blur(5px);
+}
+
 .about {
   background:
     radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,.1), transparent 24%),

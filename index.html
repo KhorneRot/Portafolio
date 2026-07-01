@@ -38,7 +38,7 @@
           <div>
             <div class="eyebrow reveal">UX Designer · Product Design · UI Systems</div>
 
-            <h1 class="hero-title reveal" style="--delay: 90ms;">
+            <h1 class="hero-title reveal" style="--delay: 90ms;" data-hero-title aria-live="polite">
               Treecat
               <span>Design</span>
             </h1>
@@ -54,13 +54,25 @@
             </div>
           </div>
 
-          <div class="hero-logo-wrap reveal" style="--delay: 180ms;">
-            <img
-              class="hero-logo"
-              src="./assets/treecat-logo.jpeg"
-              alt="Logo principal de treecatdesign"
-            />
-          </div>
+          <button class="hero-logo-wrap hero-flip-card reveal" type="button" style="--delay: 180ms;" data-hero-card aria-label="Cambiar presentación">
+            <span class="hero-card-inner" aria-hidden="true">
+              <span class="hero-card-face hero-card-face--front">
+                <img
+                  class="hero-logo"
+                  src="./assets/treecat-logo.jpeg"
+                  alt=""
+                />
+              </span>
+
+              <span class="hero-card-face hero-card-face--back">
+                <img
+                  class="hero-logo hero-logo--profile"
+                  src="./assets/alejandro-ramirez-perfil.jpeg"
+                  alt=""
+                />
+              </span>
+            </span>
+          </button>
         </div>
       </section>
 
